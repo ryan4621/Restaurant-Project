@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Responsive Calendar</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="calendar.css">
+  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="terms&policies.css">
+  <link rel="stylesheet" href="cart-page.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="tc-header">
+      <div class="c-navigate">
+          <div class="nav">
+              <a href="home.html"><img src="project-logo.avif" class="header-logo" alt="Logo"></a>
+              <nav class="nav-links">
+                  <ul>
+                      <li><a href="home.html" style="color: #FCEDD4;">Home</a></li>
+                      <li><a href="menu.html">Menu</a></li>
+                      <li><a href="reservations.html">Reservations</a></li>
+                      <li><a href="#">Gallery</a></li>
+                      <li><a href="contact.html">Contact</a></li>
+                  </ul>
+              </nav>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="cart-icon">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+              </svg>                  
+          </div>
+      </div>
+  </header>
+
+  <div class="carting">
+    <div class="cart-items">
+        
+    </div>
+    <div class="cart-total">
+        <div class="d-flex justify-content-between h-auto">
+            <span class="fs-5 fw-bold mb-4">Summary</span>
+        </div>
+        <div class="cart-total-item">
+            <span class="cart-total-title">Subtotal</span>
+            <span class="cart-sub-total-price">$0</span>
+        </div>
+        <!-- <div class="cart-total-item mt-2">
+            <span class="cart-total-title">Delivery</span>
+            <span class="cart-delivery-price">$24.00</span>
+        </div>
+        <div class="border-top cart-total-item mt-4 pt-4 pb-4">
+            <span class="cart-total-title fw-bold">Total</span>
+            <span class="cart-total-price fw-bold">$0</span>
+        </div> -->
+        <button class="btn-purchase" type="button">Go To Checkout</button>
+    </div>
+  </div>
+
+  <div class="tc-border" style="margin-top: 80px;"></div>
+
+  <footer class="footer">
+      <div class="footer-container">
+          <div class="contact">
+              <div class="location">
+                  <p>Kigali - Rwanda</p>
+                  <p>Kimuhurura, KG 623 St</p>
+              </div>
+              <div class="footer-logo">
+                  <a href="home.html"><img src="project-logo.avif" alt="Logo"></a>
+                  <div class="social-icons">
+                      <a><i class="fa-brands fa-facebook"></i></a>
+                      <a><i class="fa-brands fa-twitter"></i></a>
+                      <a><i class="fa-brands fa-instagram"></i></a>
+                  </div>
+              </div>
+              <div class="contact-info">
+                  <p>+250 791 375 628</p>
+                  <a href="mailto:reservation@boho.rw">reservation@boho.rw</a>
+                  <a href="mailto:info@boho.rw">info@boho.rw</a>
+              </div>
+          </div>
+          <div class="links">
+              <a href="terms&policies.html">FAQ</a>
+              <a href="terms&policies.html">Terms & Conditions</a>
+              <a href="terms&policies.html">Privacy Policy</a>
+              <a href="terms&policies.html">Shipping Policy</a>
+              <a href="terms&policies.html">Refund Policy</a>
+              <a href="terms&policies.html">Cookie Policy</a>
+          </div>
+          <small style="position: relative; top: 60px;">©2023 Boho</small>
+      </div> 
+  </footer>
+
+  <script src="cart-page.js"></script>
+
+</body>
+</html>

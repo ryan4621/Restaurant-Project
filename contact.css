@@ -1,0 +1,152 @@
+body {
+    margin: 0;
+    color: #fff;
+    background-color: #292727;
+    font-family: 'Montserrat', sans-serif;
+}
+.c-section{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 160px;
+    align-items: center;
+    margin: 0 auto;
+}
+h1{
+    font-family: "Cinzel", serif;
+    font-size: 60px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin: 0;
+}
+.c-sub{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 65%;
+    height: 500px;
+    margin-top: 50px;
+
+}
+.c-contact{
+    /* display: block; */
+    display: flex;
+    flex-direction: column;
+    /* padding: 40px 20px;
+    max-width: 500px; */
+    /* margin: 0 auto; */
+    gap: clamp(20px, 1vw, 40px);
+}
+.c-tab{
+    display: flex;
+    flex-direction: row;
+    /* justify-content: center; */
+    vertical-align: middle;
+    align-items: flex-start;
+    gap: 40px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
+    padding-top: 20px;
+    margin: 0;
+    
+    /* width: 75%; */
+}
+.c-tab svg{
+    height: 35px;
+    width: 35px;
+    stroke-width: 1;
+    flex-shrink: 0;
+    vertical-align: middle;
+    margin: 0;
+}
+.c-tab p {
+    margin: 0;
+    /* line-height: 1.6; */
+}
+.c-email-text{
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.4;
+}
+.c-email-text > a{
+    /* font-weight: 200; */
+    text-decoration: none;
+    color: #ffffff;
+}
+.social-icons {
+    margin: 0;
+}
+.social-icons a {
+    font-size: 22px;
+}
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    max-width: 600px;
+    font-size: 15px;
+    font-weight: 100;
+    margin-top: 10px;
+}
+
+.name {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+.name > div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.name input {
+    height: 33px;
+    background-color: transparent;
+    border: 0.7px solid #fff;
+    width: 100%;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 15px;
+    width: 100%;
+}
+
+.form input {
+    background-color: transparent;
+    border: 0.7px solid #fff;
+    width: 100%;
+    height: 40px;
+}
+
+.form input:hover, .name input:hover{
+    box-shadow: inset 0 0 0 1px #ffffff;
+}
+
+.message input {
+    height: 80px;
+}
+
+.form-btn {
+    align-self: flex-end;
+    margin-top: 20px;
+    background-color: #989797;
+    border: none;
+    font-size: 0.9rem;
+    font-weight: 200;
+    font-family: 'Montserrat', sans-serif;
+    height: 38px;
+    width: 138px;
+}
+
+.form-btn:hover{
+    color: #616161;
+    font-weight: 300;
+    background-color: transparent;
+    border: 1px solid #616161;
+}

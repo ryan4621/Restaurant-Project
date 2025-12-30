@@ -1,0 +1,19 @@
+.carting{
+    position: relative;
+    top: 150px;
+}
+.cart-item-icon{
+    background-color: black;
+    width: 50px;
+    height: 50px;
+}
+.cart-item-icon > svg{
+    height: 30px;
+    width: 30px;
+    color: white;
+}
+.btn-remove{
+    height: 30px;
+    width: 30px;
+    color: white;
+}
