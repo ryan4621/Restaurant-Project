@@ -1,1581 +1,1838 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BOHO Restaurant</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="home.css">
-    <link rel="stylesheet" href="terms&policies.css">
-    <link rel="stylesheet" href="contact.css">
-    <link rel="stylesheet" href="menu.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous"> -->
-</head>
-<body class="menu-page">
-    <!-- Header -->
-    <header class="tc-header">
-        <div class="navigate">
-            <div class="nav">
-                <a href="home.html"><img src="project-logo.avif" class="header-logo" alt="Logo"></a>
-                <nav class="nav-links">
-                    <ul>
-                        <li><a href="home.html" class="nav-link">Home</a></li>
-                        <li><a href="menu.html" class="nav-link" >Menu</a></li>
-                        <li><a href="reservations.html" class="nav-link" >Reservations</a></li>
-                        <li><a href="#" class="nav-link" >Gallery</a></li>
-                        <li><a href="contact.html" class="nav-link" >Contact</a></li>
-                    </ul>
-                </nav>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="cart-icon">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
-                </svg>                  
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>BOHO Restaurant</title>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;500&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="home.css" />
+		<link rel="stylesheet" href="menu.css" />
+    	<link rel="stylesheet" href="cart.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+		/>
+	</head>
+	<body class="menu-page">
+		<div class="overlay"></div>
+		
+		<!-- Mobile Sidebar -->
+		<div class="mobile-sidebar">
+            <div class="mobile-sidebar-header">
+                <div class="mobile-sidebar-logo">
+				    <img src="project-logo.avif" alt="Logo" />
+                </div>
+
+                <button class="mobile-sidebar-close">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="2"
+                        stroke="currentColor"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M6 18 18 6M6 6l12 12"
+                        />
+                    </svg>
+                </button>
             </div>
-        </div>
-    </header>
+			<nav class="mobile-nav-links">
+				<a href="home.html" class="mobile-nav-link">Home</a>
+				<a href="menu.html" class="mobile-nav-link">Menu</a>
+				<a href="reservations.html" class="mobile-nav-link">Reservations</a>
+				<a href="#" class="mobile-nav-link">Gallery</a>
+				<a href="contact.html" class="mobile-nav-link">Contact</a>
+			</nav>
+		</div>
 
-    <section class="menu-section">
-        <div class="menu-slide">
-            <div class="menu-slide-links">
-                <a href = "#" class="food-link">Food Menu</a>
-                <a href = "#" class="drinks-link">Drinks Menu</a>
-            </div>
-            <div class="menu-slide-border"></div>
-        </div>
-        <div class="food-menu">
-            <h1>FOOD MENU</h1>
-            <div class="menu-menu">
-                <div class="menu-cover menu-left">    
-                    <div class="menu-item">
-                        <h3>APERITIFS</h3>
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>BOHO MIXED BOARD</h4>
-                                <span class="price">$ 25.00</span>
-                            </div>
-                        </div>
+		<!-- Cart sidebar -->
+		<section class="cart-section">
+			<div class="cart-header">
+				<div class="cart-head">
+					<div class="cart-name">
+						<p>CART</p>
+						<p>(0 items)</p>
+					</div>
+					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="close-cart">
+						<path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+					</svg>
+				</div>
+				<div class="cart-header-border"></div>    
+			</div>
+			<div class="empty">
+				<p>Your cart is empty.</p>
+			</div>
 
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>TRIO OF SAMOUSSAS</h4>
-                                <span class="price">$ 17.00</span>
-                            </div>
-                            <p>Trio of samoussas, vegetable <br> samoussas, marinated chicken <br> samoussas, marinated beef <br> samoussas, accompanied by a <br> chef's recipe cream sauce</p>
-                        </div>
+			<div class="cart-total">
+				<div>
+					<span>Summary</span>
+				</div>
+				<div class="cart-total-item">
+					<span class="cart-total-title">Subtotal</span>
+					<span class="cart-total-price">$0</span>
+				</div>
+				<button class="btn-purchase" type="button">Go To Checkout</button>
+			</div>
+    	</section>
 
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>DUO TEMPURA VEGETABLES AND <br> SAMBAZA</h4>
-                                <span class="price">$ 17.00</span>
-                            </div>
-                            <p>Tempura of onions, carrots, white <br> cabbage and broccoli</p>
-                        </div>
+		<!-- Header -->
+		<header class="header2">
+			<div class="navigate">
+				<div class="nav">
+					<button class="hamburger-menu">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke-width="1.5"
+							stroke="currentColor"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+							/>
+						</svg>
+					</button>
 
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>ASSORTMENT OF CRISPY CHIPS</h4>
-                                <span class="price">$ 12.00</span>
-                            </div>
-                            <p>Plantain chips, sweet potato chips, <br> yam chips with with a creamy curry <br> and herb sauce</p>
-                        </div>
-                        
-                    </div>
+					<a href="home.html" class="header-logo-link"
+						><img src="project-logo.avif" class="header-logo" alt="Logo"
+					/></a>
 
-                    <div class="menu-item">
-                        <div class="cold-header">
-                            <h3>COLD STARTER</h3>
-                            <p>All first course are served with assorted house made breads and appropriate dressings.</p>
-                        </div>
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>CHEF'S SALAD</h4>
-                                <span class="price">$ 9.90</span>
-                            </div>
-                            <p>Sweet potato slices, crunchy mixed <br> vegetables, spinach leaves, white <br> onions, radish, cucumber, carrot, <br> mushrooms, mozzarella, black <br> olives, served with vinaigrette sauce</p>
-                        </div>
+					<nav class="nav-links">
+						<ul>
+							<li><a href="home.html" class="nav-link">Home</a></li>
+							<li><a href="menu.html" class="nav-link">Menu</a></li>
+							<li>
+								<a href="reservations.html" class="nav-link">Reservations</a>
+							</li>
+							<li><a href="#" class="nav-link">Gallery</a></li>
+							<li><a href="contact.html" class="nav-link">Contact</a></li>
+						</ul>
+					</nav>
 
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>BOHO AVOCADO & CHICKEN <br> TARTAR</h4>
-                                <span class="price">$ 8.90</span>
-                            </div>
-                            <p>Avocado, minced chicken, granny <br> smith, red onions, atcheke tabule, <br> sesame seeds with beetroot <br> vinaigrette sauce</p>
-                        </div>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						fill="none"
+						viewBox="0 0 24 24"
+						stroke-width="1.5"
+						stroke="currentColor"
+						class="cart-icon"
+					>
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
+						/>
+					</svg>
+				</div>
+			</div>
+		</header>
 
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>SMOKED SALMON WITH IT <br> CRUDITE</h4>
-                                <span class="price">$ 2.50</span>
-                            </div>
-                            <p>smoked salmon accompanied by <br> Crudité of lettus, julienne red <br> cabbage and carrots</p>
-                        </div>   
-                    </div>
+		<!-- Menu -->
+		<section class="menu-section">
+			<div class="menu-slide">
+				<div class="menu-slide-links">
+					<a href="#" class="food-link">Food Menu</a>
+					<a href="#" class="drinks-link">Drinks Menu</a>
+				</div>
+				<!-- <div class="menu-slide-border"></div> -->
+			</div>
+			<div class="food-menu">
+				<h1>FOOD MENU</h1>
+				<div class="menu-menu">
+					<div class="menu-cover menu-left">
+						<div class="menu-item">
+							<h3>APERITIFS</h3>
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>BOHO MIXED BOARD</h4>
+									<span class="price">$ 25.00</span>
+								</div>
+							</div>
 
-                    <div class="menu-item">
-                        <h3>HOT STARTER</h3>
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>AFRICAN SOUPE</h4>
-                                <span class="price">$ 28.00</span>
-                            </div>
-                            <p>Cream of yam and sweet potato <br> mixed coconut milk soup served with <br> cheese lace</p>
-                        </div>
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>TRIO OF SAMOUSSAS</h4>
+									<span class="price">$ 17.00</span>
+								</div>
+								<p>
+									Trio of samoussas, vegetable <br />
+									samoussas, marinated chicken <br />
+									samoussas, marinated beef <br />
+									samoussas, accompanied by a <br />
+									chef's recipe cream sauce
+								</p>
+							</div>
 
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>ASIAN SOUPE</h4>
-                                <span class="price">$ 9.00</span>
-                            </div>
-                            <p>Chicken noodle soup</p>
-                        </div>
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>
+										DUO TEMPURA VEGETABLES AND <br />
+										SAMBAZA
+									</h4>
+									<span class="price">$ 17.00</span>
+								</div>
+								<p>
+									Tempura of onions, carrots, white <br />
+									cabbage and broccoli
+								</p>
+							</div>
 
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>MILLE FEUILLES WITH <br> MEDITERRANEAN GRILLED <br> VEGETABLES</h4>
-                                <span class="price">$ 8.50</span>
-                            </div>
-                            <p>Eggplant, zucchini, carrot, tomatoes</p>
-                        </div>  
-                    </div>
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>ASSORTMENT OF CRISPY CHIPS</h4>
+									<span class="price">$ 12.00</span>
+								</div>
+								<p>
+									Plantain chips, sweet potato chips, <br />
+									yam chips with with a creamy curry <br />
+									and herb sauce
+								</p>
+							</div>
+						</div>
 
-                    <div class="menu-item">
-                        <div class="ag-header">
-                            <h3>AFRICAN GASTRONOMY</h3>
-                            <p>Vegetarian-friendly recipes</p>
-                        </div>
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>LA CASAMANCE</h4>
-                                <span class="price">$ 17.00</span> 
-                            </div>
-                            <p>A delicious trip to Senegal Yassa <br> sauce made with Sliced <br> caramelized onions, mustard and <br> green olives with minced chicken or <br> not accompanied by rice made of <br> coconut oil and fine herb</p>
-                        </div>
+						<div class="menu-item">
+							<div class="cold-header">
+								<h3>COLD STARTER</h3>
+								<p>
+									All first course are served with assorted house made breads
+									and appropriate dressings.
+								</p>
+							</div>
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>CHEF'S SALAD</h4>
+									<span class="price">$ 9.90</span>
+								</div>
+								<p>
+									Sweet potato slices, crunchy mixed <br />
+									vegetables, spinach leaves, white <br />
+									onions, radish, cucumber, carrot, <br />
+									mushrooms, mozzarella, black <br />
+									olives, served with vinaigrette sauce
+								</p>
+							</div>
 
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>THE MANDINKA</h4>
-                                <span class="price">$ 17.00</span>
-                            </div>
-                            <p>Gourmet takeoff for Bamako mafee <br> sauce made with Peanut paste, <br> pan-fried onions and carrots, mixed <br> with minced beef or not <br> Accompanied by futu with yam</p>
-                        </div>
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>
+										BOHO AVOCADO & CHICKEN <br />
+										TARTAR
+									</h4>
+									<span class="price">$ 8.90</span>
+								</div>
+								<p>
+									Avocado, minced chicken, granny <br />
+									smith, red onions, atcheke tabule, <br />
+									sesame seeds with beetroot <br />
+									vinaigrette sauce
+								</p>
+							</div>
 
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>SAKA-SAKA SAUCE</h4>
-                                <span class="price">$ 20.00</span>
-                            </div>
-                            <p>Special from kinshasa Stewed <br> cassava leaves flavored with palm <br> oil and peanut paste served with <br> Pan-fried prawns or Sliced beef or <br> without accompanied by slices of <br> corn fufu</p>
-                        </div>
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>
+										SMOKED SALMON WITH IT <br />
+										CRUDITE
+									</h4>
+									<span class="price">$ 2.50</span>
+								</div>
+								<p>
+									smoked salmon accompanied by <br />
+									Crudité of lettus, julienne red <br />
+									cabbage and carrots
+								</p>
+							</div>
+						</div>
 
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>PAPILLOTE OF LIBOKE WITH <br> TILAPIA</h4>
-                                <span class="price">$ 19.00</span>
-                            </div>
-                            <p>Neutral test of liboke ya Malangwa <br> Tilapia and local vegetables <br> smothered in banana leaf serve <br> with cassava couscous</p>
-                        </div>
+						<div class="menu-item">
+							<h3>HOT STARTER</h3>
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>AFRICAN SOUPE</h4>
+									<span class="price">$ 28.00</span>
+								</div>
+								<p>
+									Cream of yam and sweet potato <br />
+									mixed coconut milk soup served with <br />
+									cheese lace
+								</p>
+							</div>
 
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>PAN-FRIED DODO LEAVES WITH <br> BÉCHAMEL CREAM AND <br> SALMON STEAK</h4>
-                                <span class="price">$ 27.00</span>   
-                            </div>
-                            <p>Made of Rwandan Fresh Dodo <br> greens pan fried salmon steak with <br> dodo mixed with bechamel cream <br> accompanied yam and sweet <br> potatoes puree</p>
-                        </div> 
-                    </div>
-                </div>
-        
-        
-                <div class="menu-cover  menu-right">
-                    <div class="menu-item">
-                        <h3>OUR VEGETARIAN DISHES</h3>
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>CHEF'S VEGETABLE STEW</h4>
-                                <span class="price">$ 12.00</span>
-                            </div>
-                            <p>Delicate seasonal vegetables <br> cooked in soup Mixture of potatoes, <br> carrots, cauliflower, okra, local <br> eggplant, onions, broccoli, peas, <br> green pepper peppers zucchini <br> cooked in its broth</p>
-                        </div>
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>ASIAN SOUPE</h4>
+									<span class="price">$ 9.00</span>
+								</div>
+								<p>Chicken noodle soup</p>
+							</div>
 
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>IMVAGE LE RWANDAIS (CASSAVA <br> AND KIDNEY BEANS)</h4>
-                                <span class="price">$ 12.00</span>
-                            </div>
-                            <p>Seasoned home made casava <br> mixed with kidney beans</p>
-                        </div>
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>
+										MILLE FEUILLES WITH <br />
+										MEDITERRANEAN GRILLED <br />
+										VEGETABLES
+									</h4>
+									<span class="price">$ 8.50</span>
+								</div>
+								<p>Eggplant, zucchini, carrot, tomatoes</p>
+							</div>
+						</div>
 
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>CURRIE AND COCONUT MILK <br> DISH</h4>
-                                <span class="price">$ 8.90</span>
-                            </div>
-                            <p>Creamy Sauce made of coconut <br> milk, curry and delicately spiced <br> herbs served with rice</p>
-                        </div>
+						<div class="menu-item">
+							<div class="ag-header">
+								<h3>AFRICAN GASTRONOMY</h3>
+								<p>Vegetarian-friendly recipes</p>
+							</div>
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>LA CASAMANCE</h4>
+									<span class="price">$ 17.00</span>
+								</div>
+								<p>
+									A delicious trip to Senegal Yassa <br />
+									sauce made with Sliced <br />
+									caramelized onions, mustard and <br />
+									green olives with minced chicken or <br />
+									not accompanied by rice made of <br />
+									coconut oil and fine herb
+								</p>
+							</div>
 
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>VEGE POTATO GRATIN WITH <br> MORNAY SAUCE</h4>
-                                <span class="price">$ 9.00</span>
-                            </div>
-                            <p>Seasoned steamed potato slices, <br> gratinated with a cheese sauce</p>
-                        </div>
-                        
-                    </div>
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>THE MANDINKA</h4>
+									<span class="price">$ 17.00</span>
+								</div>
+								<p>
+									Gourmet takeoff for Bamako mafee <br />
+									sauce made with Peanut paste, <br />
+									pan-fried onions and carrots, mixed <br />
+									with minced beef or not <br />
+									Accompanied by futu with yam
+								</p>
+							</div>
 
-                    <div class="menu-item">
-                        <div>
-                            <h3>MEATS</h3>
-                            <!-- <p>All first course are served with assorted house made breads and appropriate dressings.</p> -->
-                        </div>
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>PAN-FRIED BEEF MEDALLIONS</h4>
-                                <span class="price">$ 18.00</span>
-                            </div>
-                            <p>Beef fillet rounds served with <br> creamy pepper sauce</p>
-                        </div>
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>SAKA-SAKA SAUCE</h4>
+									<span class="price">$ 20.00</span>
+								</div>
+								<p>
+									Special from kinshasa Stewed <br />
+									cassava leaves flavored with palm <br />
+									oil and peanut paste served with <br />
+									Pan-fried prawns or Sliced beef or <br />
+									without accompanied by slices of <br />
+									corn fufu
+								</p>
+							</div>
 
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>SEARED BEEF STEAK</h4>
-                                <span class="price">$ 18.00</span>
-                            </div>
-                            <p>Marinated beef and frying pan</p>
-                        </div>
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>
+										PAPILLOTE OF LIBOKE WITH <br />
+										TILAPIA
+									</h4>
+									<span class="price">$ 19.00</span>
+								</div>
+								<p>
+									Neutral test of liboke ya Malangwa <br />
+									Tilapia and local vegetables <br />
+									smothered in banana leaf serve <br />
+									with cassava couscous
+								</p>
+							</div>
 
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>A LA BOHO PORK CHOPS</h4>
-                                <span class="price">$ 17.00</span>
-                            </div>
-                            <p>Marinated and oven-roasted pork</p>
-                        </div>
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>
+										PAN-FRIED DODO LEAVES WITH <br />
+										BÉCHAMEL CREAM AND <br />
+										SALMON STEAK
+									</h4>
+									<span class="price">$ 27.00</span>
+								</div>
+								<p>
+									Made of Rwandan Fresh Dodo <br />
+									greens pan fried salmon steak with <br />
+									dodo mixed with bechamel cream <br />
+									accompanied yam and sweet <br />
+									potatoes puree
+								</p>
+							</div>
+						</div>
+					</div>
 
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>CHICKEN BICYCLE</h4>
-                                <span class="price">$ 17.00</span>
-                            </div>
-                            <p>soy caramelized chicken leg</p>
-                        </div>
-                    </div>
+					<div class="menu-cover menu-right">
+						<div class="menu-item">
+							<h3>OUR VEGETARIAN DISHES</h3>
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>CHEF'S VEGETABLE STEW</h4>
+									<span class="price">$ 12.00</span>
+								</div>
+								<p>
+									Delicate seasonal vegetables <br />
+									cooked in soup Mixture of potatoes, <br />
+									carrots, cauliflower, okra, local <br />
+									eggplant, onions, broccoli, peas, <br />
+									green pepper peppers zucchini <br />
+									cooked in its broth
+								</p>
+							</div>
 
-                    <div class="menu-item">
-                        <h3>FISH</h3>
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>OVEN-ROASTED MARINATED TILAPIA <br> FILLET</h4>
-                            </div>
-                            <p>Sweet potato slices, crunchy mixed <br> vegetables, served with vinaigrette sauce</p>
-                            <div class="fish-items">
-                                <div>
-                                    <p>White rice</p>
-                                    <span class="fish-price">$ 28.00</span>
-                                </div>
-                                <div>
-                                    <p>Biryani rice</p>
-                                    <span class="fish-price">$ 28.00</span>
-                                </div>
-                                <div>
-                                    <p>Pan-fried vegetables</p>
-                                    <span class="fish-price">$ 28.00</span>
-                                </div>
-                                <div>
-                                    <p>Pan-fried potatoes with garlic and herbs</p>
-                                    <span class="fish-price">$ 28.00</span>
-                                </div>
-                                <div>
-                                    <p>Manioc mousseline with cream and milk</p>
-                                    <span class="fish-price">$ 28.00</span>
-                                </div>
-                                <div>
-                                    <p>Plantains</p>
-                                    <span class="fish-price">$ 28.00</span>
-                                </div>
-                            </div>
-                        </div>
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>
+										IMVAGE LE RWANDAIS (CASSAVA <br />
+										AND KIDNEY BEANS)
+									</h4>
+									<span class="price">$ 12.00</span>
+								</div>
+								<p>
+									Seasoned home made casava <br />
+									mixed with kidney beans
+								</p>
+							</div>
 
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>GAMBA WITH GARLIC AND HERBS</h4>
-                            </div>
-                            <p>Pan-fried marinated king prawns with lemon <br> béchamel sauce</p>
-                            <div class="fish-items">
-                                <div>
-                                    <p>White rice</p>
-                                    <span class="fish-price">$ 28.00</span>
-                                </div>
-                                <div>
-                                    <p>Biryani rice</p>
-                                    <span class="fish-price">$ 28.00</span>
-                                </div>
-                                <div>
-                                    <p>Pan-fried vegetables</p>
-                                    <span class="fish-price">$ 28.00</span>
-                                </div>
-                                <div>
-                                    <p>Pan-fried potatoes with garlic and herbs</p>
-                                    <span class="fish-price">$ 28.00</span>
-                                </div>
-                                <div>
-                                    <p>Manioc mousseline with cream and milk</p>
-                                    <span class="fish-price">$ 28.00</span>
-                                </div>
-                                <div>
-                                    <p>Plantains</p>
-                                    <span class="fish-price">$ 28.00</span>
-                                </div>
-                            </div>
-                        </div>
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>
+										CURRIE AND COCONUT MILK <br />
+										DISH
+									</h4>
+									<span class="price">$ 8.90</span>
+								</div>
+								<p>
+									Creamy Sauce made of coconut <br />
+									milk, curry and delicately spiced <br />
+									herbs served with rice
+								</p>
+							</div>
 
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>OVEN-ROASTED MARINATED CAPTAIN'S <br> STEAK</h4>
-                            </div>
-                            <p>All first course are served with assorted house <br> made breads and appropriate dressings</p>
-                            <div class="fish-items">
-                                <div>
-                                    <p>White rice</p>
-                                    <span class="fish-price">$ 22.00</span>
-                                </div>
-                                <div>
-                                    <p>Biryani rice</p>
-                                    <span class="fish-price">$ 22.00</span>
-                                </div>
-                                <div>
-                                    <p>Pan-fried vegetables</p>
-                                    <span class="fish-price">$ 22.00</span>
-                                </div>
-                                <div>
-                                    <p>Pan-fried potatoes with garlic and herbs</p>
-                                    <span class="fish-price">$ 22.00</span>
-                                </div>
-                                <div>
-                                    <p>Manioc mousseline with cream and milk</p>
-                                    <span class="fish-price">$ 22.00</span>
-                                </div>
-                                <div>
-                                    <p>Plantains</p>
-                                    <span class="fish-price">$ 22.00</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>
+										VEGE POTATO GRATIN WITH <br />
+										MORNAY SAUCE
+									</h4>
+									<span class="price">$ 9.00</span>
+								</div>
+								<p>
+									Seasoned steamed potato slices, <br />
+									gratinated with a cheese sauce
+								</p>
+							</div>
+						</div>
 
-                    <div class="menu-item">
-                        <div>
-                            <h3>ITALIAN PASTA DISHES</h3>
-                        </div>
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>PASTA FREDO WITH CHICKEN</h4>
-                                <span class="price">$ 8.90</span> 
-                            </div>
-                            <p>Sliced caramelized onions, mustard <br> and green olive sauce</p>
-                        </div>
+						<div class="menu-item">
+							<div>
+								<h3>MEATS</h3>
+								<!-- <p>All first course are served with assorted house made breads and appropriate dressings.</p> -->
+							</div>
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>PAN-FRIED BEEF MEDALLIONS</h4>
+									<span class="price">$ 18.00</span>
+								</div>
+								<p>
+									Beef fillet rounds served with <br />
+									creamy pepper sauce
+								</p>
+							</div>
 
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>CARBONARA DOUGH</h4>
-                                <span class="price">$ 14.00</span>
-                            </div>
-                            <p>Pan-fried bacon with béchamel <br> sauce</p>
-                        </div>
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>SEARED BEEF STEAK</h4>
+									<span class="price">$ 18.00</span>
+								</div>
+								<p>Marinated beef and frying pan</p>
+							</div>
 
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>FILET MIGNON</h4>
-                                <span class="price">$ 15.00</span>
-                            </div>
-                            <p>End cut of beef fillet served on <br> caramelized onions and red wine <br> reduction</p>
-                        </div>
-                    </div>
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>A LA BOHO PORK CHOPS</h4>
+									<span class="price">$ 17.00</span>
+								</div>
+								<p>Marinated and oven-roasted pork</p>
+							</div>
 
-                    <div class="menu-item">
-                        <div>
-                            <h3>SWEET TREATS DESSERT</h3>
-                        </div>
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>FRENCH TOAST WITH FLAMBÉED <br> FRUIT</h4>
-                                <span class="price">$ 8.90</span> 
-                            </div>
-                        </div>
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>CHICKEN BICYCLE</h4>
+									<span class="price">$ 17.00</span>
+								</div>
+								<p>soy caramelized chicken leg</p>
+							</div>
+						</div>
 
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>FRENCH TOAST WITH A SCOOP <br> OF VANILLA ICE CREAM AND <br> CARAMEL COULIS</h4>
-                                <span class="price">$ 8.90</span>
-                            </div>
-                        </div>
+						<div class="menu-item">
+							<h3>FISH</h3>
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>
+										OVEN-ROASTED MARINATED TILAPIA <br />
+										FILLET
+									</h4>
+								</div>
+								<p>
+									Sweet potato slices, crunchy mixed <br />
+									vegetables, served with vinaigrette sauce
+								</p>
+								<div class="fish-items">
+									<div>
+										<p>White rice</p>
+										<span class="fish-price">$ 28.00</span>
+									</div>
+									<div>
+										<p>Biryani rice</p>
+										<span class="fish-price">$ 28.00</span>
+									</div>
+									<div>
+										<p>Pan-fried vegetables</p>
+										<span class="fish-price">$ 28.00</span>
+									</div>
+									<div>
+										<p>Pan-fried potatoes with garlic and herbs</p>
+										<span class="fish-price">$ 28.00</span>
+									</div>
+									<div>
+										<p>Manioc mousseline with cream and milk</p>
+										<span class="fish-price">$ 28.00</span>
+									</div>
+									<div>
+										<p>Plantains</p>
+										<span class="fish-price">$ 28.00</span>
+									</div>
+								</div>
+							</div>
 
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>EXOTIC FRUITS SALAD</h4>
-                                <span class="price">$ 8.90</span>
-                            </div>
-                        </div>
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>GAMBA WITH GARLIC AND HERBS</h4>
+								</div>
+								<p>
+									Pan-fried marinated king prawns with lemon <br />
+									béchamel sauce
+								</p>
+								<div class="fish-items">
+									<div>
+										<p>White rice</p>
+										<span class="fish-price">$ 28.00</span>
+									</div>
+									<div>
+										<p>Biryani rice</p>
+										<span class="fish-price">$ 28.00</span>
+									</div>
+									<div>
+										<p>Pan-fried vegetables</p>
+										<span class="fish-price">$ 28.00</span>
+									</div>
+									<div>
+										<p>Pan-fried potatoes with garlic and herbs</p>
+										<span class="fish-price">$ 28.00</span>
+									</div>
+									<div>
+										<p>Manioc mousseline with cream and milk</p>
+										<span class="fish-price">$ 28.00</span>
+									</div>
+									<div>
+										<p>Plantains</p>
+										<span class="fish-price">$ 28.00</span>
+									</div>
+								</div>
+							</div>
 
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>CHOCOLATE DELICACY</h4>
-                                <span class="price">$ 8.90</span>
-                            </div>
-                            <p>Moelleux chocolate cake with <br> chocolate sauce</p>
-                        </div>
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>
+										OVEN-ROASTED MARINATED CAPTAIN'S <br />
+										STEAK
+									</h4>
+								</div>
+								<p>
+									All first course are served with assorted house <br />
+									made breads and appropriate dressings
+								</p>
+								<div class="fish-items">
+									<div>
+										<p>White rice</p>
+										<span class="fish-price">$ 22.00</span>
+									</div>
+									<div>
+										<p>Biryani rice</p>
+										<span class="fish-price">$ 22.00</span>
+									</div>
+									<div>
+										<p>Pan-fried vegetables</p>
+										<span class="fish-price">$ 22.00</span>
+									</div>
+									<div>
+										<p>Pan-fried potatoes with garlic and herbs</p>
+										<span class="fish-price">$ 22.00</span>
+									</div>
+									<div>
+										<p>Manioc mousseline with cream and milk</p>
+										<span class="fish-price">$ 22.00</span>
+									</div>
+									<div>
+										<p>Plantains</p>
+										<span class="fish-price">$ 22.00</span>
+									</div>
+								</div>
+							</div>
+						</div>
 
+						<div class="menu-item">
+							<div>
+								<h3>ITALIAN PASTA DISHES</h3>
+							</div>
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>PASTA FREDO WITH CHICKEN</h4>
+									<span class="price">$ 8.90</span>
+								</div>
+								<p>
+									Sliced caramelized onions, mustard <br />
+									and green olive sauce
+								</p>
+							</div>
 
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>Moelleux chocolate cake <br> with chocolate sauce</h4>
-                                <span class="price">$ 8.90</span>
-                            </div>
-                            <p>Coffee or African tea with <br> mignardises</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>CARBONARA DOUGH</h4>
+									<span class="price">$ 14.00</span>
+								</div>
+								<p>
+									Pan-fried bacon with béchamel <br />
+									sauce
+								</p>
+							</div>
 
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>FILET MIGNON</h4>
+									<span class="price">$ 15.00</span>
+								</div>
+								<p>
+									End cut of beef fillet served on <br />
+									caramelized onions and red wine <br />
+									reduction
+								</p>
+							</div>
+						</div>
 
-        <div class="drinks-menu" style="display: none;">
-            <h1>DRINKS MENU</h1>
-            <div class="menu-menu">
-                <div class="menu-cover menu-left">    
-                    <div class="menu-item">
-                        <h3>SODA</h3>
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>FANTA ORANGE</h4>
-                                <span class="price">$ 2.00</span>
-                            </div>
-                        </div>
-    
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>FANTA CITRON</h4>
-                                <span class="price">$ 2.00</span>
-                            </div>
-                        </div>
-    
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>FANTA FIESTA</h4>
-                                <span class="price">$ 2.00</span>
-                            </div>
-                        </div>
-    
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>COCA COLA</h4>
-                                <span class="price">$ 2.00</span>
-                            </div>
-                        </div>
-    
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>SPRITE</h4>
-                                <span class="price">$ 2.00</span>
-                            </div>
-                        </div>
-    
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>TONIC</h4>
-                                <span class="price">$ 2.00</span>
-                            </div>
-    
-                        </div>
-                        
-                    </div>
-    
-                    <div class="menu-item">
-                        <div>
-                            <h3>WATER</h3>
-                        </div>
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>INYANGE MINERAL WATER</h4>
-                                <span class="price">$ 2.00</span>
-                            </div>
-                        </div>
-    
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>VIRUNGA STILL WATER</h4>
-                                <span class="price">$ 2.00</span>
-                            </div>
-                        </div>
-    
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>VIRUNGA SPARKLING WATER</h4>
-                                <span class="price">$ 2.00</span>
-                            </div>
-                        </div>
-                        
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>VITALO</h4>
-                                <span class="price">$ 2.00</span>
-                            </div>
-                        </div>
-                    </div>
-    
-                    <div class="menu-item">
-                        <h3>FRESH JUICES GLASS</h3>
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>PASSION JUICE</h4>
-                                <span class="price">$ 7.00</span>
-                            </div>
-                        </div>
-    
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>MANGO JUICE</h4>
-                                <span class="price">$ 7.00</span>
-                            </div>
-                        </div>
-    
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>COCKTAIL JUICE</h4>
-                                <span class="price">$ 7.00</span>
-                            </div>
-                        </div>
-    
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>WATERMELON JUICE</h4>
-                                <span class="price">$ 5.00</span>
-                            </div>
-                        </div> 
-    
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>PINEAPPLE JUICE</h4>
-                                <span class="price">$ 5.00</span>
-                            </div>
-                        </div> 
-                    </div>
-    
-                    <div class="menu-item">
-                        <div>
-                            <h3>SQUIZED DETOX JUICES</h3>
-                        </div>
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>ORANGE-CAROT GINGER</h4>
-                                <span class="price">$ 10.00</span> 
-                            </div>
-                        </div>
-    
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>LEMONA DETOX</h4>
-                                <span class="price">$ 10.00</span>
-                            </div>
-                        </div>
-    
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>CUCUMBER MINT DETOX</h4>
-                                <span class="price">$ 7.00</span>
-                            </div>
-                        </div>
-    
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>BEET DETOX</h4>
-                                <span class="price">$ 7.00</span>
-                            </div>
-                        </div> 
-                    </div>
-    
-                    <div class="menu-item">
-                        <div>
-                            <h3>ENERGY DRINK IN A CAN</h3>
-                        </div>
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>RED BULL</h4>
-                                <span class="price">$ 5.00</span> 
-                            </div>
-                        </div>
-                    </div>
-    
-                    <div class="menu-item">
-                        <h3>SIGNATURE SMOOTHIES</h3>
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>TROPICAL BLISS</h4>
-                                <span class="price">$ 8.00</span>
-                            </div>
-                            <p>A refreshing blend of pineapple, <br> mango, and coconut milk</p>
-                        </div>
-    
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>BERRY BURST</h4>
-                                <span class="price">$ 8.00</span>
-                            </div>
-                            <p>A mix of strawberries, blueberries, and banana with yogurt</p>
-                        </div>
-    
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>GREEN GODDESS</h4>
-                                <span class="price">$ 10.00</span>
-                            </div>
-                            <p>Spinach, banana, and apple for a nutrient-packed option</p>
-                        </div>
-                        
-                    </div>
-    
-                    <div class="menu-item">
-                        <h3>CLASSIC MILKSHAKES</h3>
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>VANILLA DREAM</h4>
-                                <span class="price">$ 10.00</span>
-                            </div>
-                            <p>Creamy vanilla ice cream with a hint of vanilla extract</p>
-                        </div>
-    
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>CHOCOLATE INDULGENCE</h4>
-                                <span class="price">$ 8.00</span>
-                            </div>
-                            <p>Rich chocolate ice cream blended with chocolate fudge</p>
-                        </div>
-    
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>STRAWBERRY SWIRL</h4>
-                                <span class="price">$ 8.00</span>
-                            </div>
-                            <p>Fresh strawberries combined with strawberry ice cream</p>
-                        </div>
-                        
-                    </div>
-    
-                    <div class="menu-item">
-                        <div>
-                            <h3>TEA</h3>
-                        </div>
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>AFRICAN TEA</h4>
-                                <span class="price">$ 5.00</span> 
-                            </div>
-                        </div>
-    
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>LEMON & GINGER TEA</h4>
-                                <span class="price">$ 5.00</span>
-                            </div>
-                        </div>
-    
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>ICED TEA</h4>
-                                <span class="price">$ 5.00</span>
-                            </div>
-                        </div>
-    
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>ENGLISH TEA/BLACK TEA</h4>
-                                <span class="price">$ 5.00</span>
-                            </div>
-                        </div>
-    
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>GREEN TEA</h4>
-                                <span class="price">$ 5.00</span>
-                            </div>
-                        </div>
-    
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>CHAMOMILE TEA</h4>
-                                <span class="price">$ 5.00</span>
-                            </div>
-                        </div>
-                    </div>
-    
-                    <div class="menu-item">
-                        <div>
-                            <h3>COFFEE</h3>
-                        </div>
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>IRISH COFFEE</h4>
-                                <span class="price">$ 12.00</span> 
-                            </div>
-                        </div>
-    
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>CAPPUCCINO</h4>
-                                <span class="price">$ 5.00</span>
-                            </div>
-                        </div>
-    
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>ESPRESSO DOUBLE</h4>
-                                <span class="price">$ 5.00</span>
-                            </div>
-                        </div>
-    
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>CAFE LATTE</h4>
-                                <span class="price">$ 5.00</span>
-                            </div>
-                        </div>
-    
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>CAFE MOCHA</h4>
-                                <span class="price">$ 5.00</span>
-                            </div>
-                        </div>
-    
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>HOT CHOCOLATE</h4>
-                                <span class="price">$ 4.50</span>
-                            </div>
-                        </div>
-    
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>ICED LATTE</h4>
-                                <span class="price">$ 4.50</span>
-                            </div>
-                        </div>
-    
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>ICED MOCHA</h4>
-                                <span class="price">$ 4.50</span>
-                            </div>
-                        </div>
-    
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>CLASSIC AMERICANO</h4>
-                                <span class="price">$ 5.00</span>
-                            </div>
-                        </div>
-    
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>DECAFFEINATED COFFEE</h4>
-                                <span class="price">$ 5.00</span>
-                            </div>
-                        </div>
-    
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>ICED AMERICANO</h4>
-                                <span class="price">$ 5.00</span>
-                            </div>
-                        </div>
-    
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>ESPRESSO SINGLE</h4>
-                                <span class="price">$ 3.00</span>
-                            </div>
-                        </div>
-    
-                    </div>
-    
-                    <div class="menu-item">
-                        <div>
-                            <h3>LOCAL BEERS</h3>
-                        </div>
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>HEINEKEN</h4>
-                                <span class="price">$ 3.00</span> 
-                            </div>
-                        </div>
-    
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>AMSTEL</h4>
-                                <span class="price">$ 3.00</span>
-                            </div>
-                        </div>
-    
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>MUTZING</h4>
-                                <span class="price">$ 3.00</span>
-                            </div>
-                        </div>
-    
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>SKOL SELECT</h4>
-                                <span class="price">$ 3.00</span>
-                            </div>
-                        </div>
-    
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>SKOL LAGER</h4>
-                                <span class="price">$ 3.00</span>
-                            </div>
-                        </div>
-    
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>SKOL MALT</h4>
-                                <span class="price">$ 3.00</span>
-                            </div>
-                        </div>
-    
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>VIRUNGA MIST</h4>
-                                <span class="price">$ 3.00</span>
-                            </div>
-                        </div>
-    
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>VIRUNGA GOLD</h4>
-                                <span class="price">$ 3.00</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-        
-        
-                <div class="menu-cover  menu-right">
-                    <div class="menu-item">
-                        <h3>DRAUGHT BEERS</h3>
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>AMSTEL</h4>
-                                <span class="price">$ 4.00</span>
-                            </div>
-                        </div>
-    
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>MUTZING.</h4>
-                                <span class="price">$ 4.00</span>
-                            </div>
-                        </div>
-                        
-                    </div>
-    
-                    <div class="menu-item">
-                        <div>
-                            <h3>IMPORTED BEERS</h3>
-                        </div>
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>LEFFE</h4>
-                                <span class="price">$ 5.00</span>
-                            </div>
-                        </div>
-    
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>GUINNESS</h4>
-                                <span class="price">$ 4.00</span>
-                            </div>
-                        </div>
-    
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>TUSKER LAGER</h4>
-                                <span class="price">$ 4.00</span>
-                            </div>
-                        </div>
-    
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>TUSKER MALT</h4>
-                                <span class="price">$ 4.00</span>
-                            </div>
-                        </div>
-    
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>SMIRNOFF ICE BLACK</h4>
-                                <span class="price">$ 4.00</span>
-                            </div>
-                        </div>
-    
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>CARLSBERG</h4>
-                                <span class="price">$ 5.00</span>
-                            </div>
-                        </div>
-                    </div>
-    
-                    <div class="menu-item">
-                        <h3>BEERS (NON-ALCOHOLIC)</h3>
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>BAVARIA NON-ALCOHOL</h4>
-                                <span class="price">$ 3.00</span>
-                            </div>
-                        </div>
-    
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>PANACHE LEMON</h4>
-                                <span class="price">$ 3.00</span>
-                            </div>
-                        </div>
-    
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>HEINEKEN0.0</h4>
-                                <span class="price">$ 3.00</span>
-                            </div>
-                        </div>
-                    </div>
-    
-                    <div class="menu-item">
-                        <div>
-                            <h3>RTD & BEERS</h3>
-                        </div>
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>SAVANA CIDER</h4>
-                                <span class="price">$ 6.00</span> 
-                            </div>
-                        </div>
-    
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>TEQUILA SOMBRERO</h4>
-                                <span class="price">$ 6.00</span>
-                            </div>
-                        </div>
-    
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>SMIRNOFF GUARANA</h4>
-                                <span class="price">$ 5.00</span>
-                            </div>
-                        </div>
-                    </div>
-    
-                    <div class="menu-item">
-                        <div>
-                            <h3>COGNACS & SINGLE MALTS (BOTTLE <br> & TOT)</h3>
-                        </div>
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>HENESSY XO</h4>
-                                <span class="price">$ 1,200.00</span> 
-                            </div>
-                        </div>
-    
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>COURVOISIER XO</h4>
-                                <span class="price">$ 1,200.00</span>
-                            </div>
-                        </div>
-    
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>THE MACALLAN DOUBLE CASK 18YRS</h4>
-                            </div>
-                            <div class="fish-items">
-                                <div>
-                                    <p>Bottle</p>
-                                    <span class="fish-price">$ 1,500.00</span>
-                                </div>
-                                <div>
-                                    <p>Tot</p>
-                                    <span class="fish-price">$ 90.00</span>
-                                </div>
-                            </div>
-                        </div>
-    
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>MARTEL XO</h4>
-                            </div>
-                            <div class="fish-items">
-                                <div>
-                                    <p>Bottle</p>
-                                    <span class="fish-price">$ 1,100.00</span>
-                                </div>
-                                <div>
-                                    <p>Tot</p>
-                                    <span class="fish-price">$ 60.00</span>
-                                </div>
-                            </div>
-                        </div>
-    
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>ABK6 XO</h4>
-                            </div>
-                            <div class="fish-items">
-                                <div>
-                                    <p>Bottle</p>
-                                    <span class="fish-price">$ 750.00</span>
-                                </div>
-                                <div>
-                                    <p>Tot</p>
-                                    <span class="fish-price">$ 45.00</span>
-                                </div>
-                            </div>
-                        </div>
-    
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>HIGHLAND PARK 18 YRS</h4>
-                                <span class="price">$ 350.00</span>
-                            </div>
-                        </div>
-    
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>THE MACALLAN DOUBLE CASK 15YRS</h4>
-                            </div>
-                            <div class="fish-items">
-                                <div>
-                                    <p>Bottle</p>
-                                    <span class="fish-price">$ 750.00</span>
-                                </div>
-                                <div>
-                                    <p>Tot</p>
-                                    <span class="fish-price">$ 45.00</span>
-                                </div>
-                            </div>
-                        </div>
-    
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>HENNESSY COURVOISIER V.S.O.P</h4>
-                            </div>
-                            <div class="fish-items">
-                                <div>
-                                    <p>Bottle</p>
-                                    <span class="fish-price">$ 300.00</span>
-                                </div>
-                                <div>
-                                    <p>Tot</p>
-                                    <span class="fish-price">$ 18.00</span>
-                                </div>
-                            </div>
-                        </div>
-    
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>HENNESSY V.S.O.P</h4>
-                            </div>
-                            <div class="fish-items">
-                                <div>
-                                    <p>Bottle</p>
-                                    <span class="fish-price">$ 300.00</span>
-                                </div>
-                                <div>
-                                    <p>Tot</p>
-                                    <span class="fish-price">$ 18.00</span>
-                                </div>
-                            </div>
-                        </div>
-    
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>HENNESSY V.S</h4>
-                            </div>
-                            <div class="fish-items">
-                                <div>
-                                    <p>Bottle</p>
-                                    <span class="fish-price">$ 250.00</span>
-                                </div>
-                                <div>
-                                    <p>Tot</p>
-                                    <span class="fish-price">$ 15.00</span>
-                                </div>
-                            </div>
-                        </div>
-    
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>MARTEL V.S.O.P</h4>
-                            </div>
-                            <div class="fish-items">
-                                <div>
-                                    <p>Bottle</p>
-                                    <span class="fish-price">$ 300.00</span>
-                                </div>
-                                <div>
-                                    <p>Tot</p>
-                                    <span class="fish-price">$ 18.00</span>
-                                </div>
-                            </div>
-                        </div>
-    
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>REMY MARTIN V.S.O.P</h4>
-                            </div>
-                            <div class="fish-items">
-                                <div>
-                                    <p>Bottle</p>
-                                    <span class="fish-price">$ 300.00</span>
-                                </div>
-                                <div>
-                                    <p>Tot</p>
-                                    <span class="fish-price">$ 18.00</span>
-                                </div>
-                            </div>
-                        </div>
-    
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>ABK6 VSOP DOMAINE</h4>
-                            </div>
-                            <div class="fish-items">
-                                <div>
-                                    <p>Bottle</p>
-                                    <span class="fish-price">$ 250.00</span>
-                                </div>
-                                <div>
-                                    <p>Tot</p>
-                                    <span class="fish-price">$ 15.00</span>
-                                </div>
-                            </div>
-                        </div>
-    
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>MARTEL V.S</h4>
-                            </div>
-                            <div class="fish-items">
-                                <div>
-                                    <p>Bottle</p>
-                                    <span class="fish-price">$ 250.00</span>
-                                </div>
-                                <div>
-                                    <p>Tot</p>
-                                    <span class="fish-price">$ 15.00</span>
-                                </div>
-                            </div>
-                        </div>
-    
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>REVISEUR VSOP</h4>
-                            </div>
-                            <div class="fish-items">
-                                <div>
-                                    <p>Bottle</p>
-                                    <span class="fish-price">$ 200.00</span>
-                                </div>
-                                <div>
-                                    <p>Tot</p>
-                                    <span class="fish-price">$ 10.00</span>
-                                </div>
-                            </div>
-                        </div>
-    
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>ABK6 VS PURE SINGLE</h4>
-                            </div>
-                            <div class="fish-items">
-                                <div>
-                                    <p>Bottle</p>
-                                    <span class="fish-price">$ 200.00</span>
-                                </div>
-                                <div>
-                                    <p>Tot</p>
-                                    <span class="fish-price">$ 12.00</span>
-                                </div>
-                            </div>
-                        </div>
-    
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>GLENROTHES 12 YRS</h4>
-                            </div>
-                            <div class="fish-items">
-                                <div>
-                                    <p>Bottle</p>
-                                    <span class="fish-price">$ 150.00</span>
-                                </div>
-                                <div>
-                                    <p>Tot</p>
-                                    <span class="fish-price">$ 7.00</span>
-                                </div>
-                            </div>
-                        </div>
-    
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>REVISEUR VS</h4>
-                            </div>
-                            <div class="fish-items">
-                                <div>
-                                    <p>Bottle</p>
-                                    <span class="fish-price">$ 150.00</span>
-                                </div>
-                                <div>
-                                    <p>Tot</p>
-                                    <span class="fish-price">$ 8.00</span>
-                                </div>
-                            </div>
-                        </div>
-    
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>THE MACALLAN TRIPLE CASK 12YRS</h4>
-                            </div>
-                            <div class="fish-items">
-                                <div>
-                                    <p>Bottle</p>
-                                    <span class="fish-price">$ 350.00</span>
-                                </div>
-                                <div>
-                                    <p>Tot</p>
-                                    <span class="fish-price">$ 21.00</span>
-                                </div>
-                            </div>
-                        </div>
-    
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>HIGHLAND PARK 12 YRS</h4>
-                            </div>
-                            <div class="fish-items">
-                                <div>
-                                    <p>Bottle</p>
-                                    <span class="fish-price">$ 130.00</span>
-                                </div>
-                                <div>
-                                    <p>Tot</p>
-                                    <span class="fish-price">$ 7.00</span>
-                                </div>
-                            </div>
-                        </div>
-    
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>GLENROTHES 10 YRS</h4>
-                            </div>
-                            <div class="fish-items">
-                                <div>
-                                    <p>Bottle</p>
-                                    <span class="fish-price">$ 150.00</span>
-                                </div>
-                                <div>
-                                    <p>Tot</p>
-                                    <span class="fish-price">$ 15.00</span>
-                                </div>
-                            </div>
-                        </div>
-    
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>ABK6 ICE</h4>
-                            </div>
-                            <div class="fish-items">
-                                <div>
-                                    <p>Bottle</p>
-                                    <span class="fish-price">$ 130.00</span>
-                                </div>
-                                <div>
-                                    <p>Tot</p>
-                                    <span class="fish-price">$ 12.00</span>
-                                </div>
-                            </div>
-                        </div>
-    
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>ABK6 ORANGE LIQUEUR</h4>
-                            </div>
-                            <div class="fish-items">
-                                <div>
-                                    <p>Bottle</p>
-                                    <span class="fish-price">$ 150.00</span>
-                                </div>
-                                <div>
-                                    <p>Tot</p>
-                                    <span class="fish-price">$ 10.00</span>
-                                </div>
-                            </div>
-                        </div>
-    
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>GLENLIVET 18YRS</h4>
-                            </div>
-                            <div class="fish-items">
-                                <div>
-                                    <p>Bottle</p>
-                                    <span class="fish-price">$ 350.00</span>
-                                </div>
-                                <div>
-                                    <p>Tot</p>
-                                    <span class="fish-price">$ 20.00</span>
-                                </div>
-                            </div>
-                        </div>
-    
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>GLENFIDDICH 18YRS</h4>
-                            </div>
-                            <div class="fish-items">
-                                <div>
-                                    <p>Bottle</p>
-                                    <span class="fish-price">$ 350.00</span>
-                                </div>
-                                <div>
-                                    <p>Tot</p>
-                                    <span class="fish-price">$ 24.00</span>
-                                </div>
-                            </div>
-                        </div>
-    
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>GLENLIVET 15YRS</h4>
-                            </div>
-                            <div class="fish-items">
-                                <div>
-                                    <p>Bottle</p>
-                                    <span class="fish-price">$ 300.00</span>
-                                </div>
-                                <div>
-                                    <p>Tot</p>
-                                    <span class="fish-price">$ 18.00</span>
-                                </div>
-                            </div>
-                        </div>
-    
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>GLENFIDDICH 15YRS</h4>
-                            </div>
-                            <div class="fish-items">
-                                <div>
-                                    <p>Bottle</p>
-                                    <span class="fish-price">$ 320.00</span>
-                                </div>
-                                <div>
-                                    <p>Tot</p>
-                                    <span class="fish-price">$ 20.00</span>
-                                </div>
-                            </div>
-                        </div>
-    
-                        <div class="menu-tab">
-                            <div class="menu-border"></div>
-                            <div class="meal">
-                                <h4>GLENLIVET 12YRS</h4>
-                            </div>
-                            <div class="fish-items">
-                                <div>
-                                    <p>Bottle</p>
-                                    <span class="fish-price">$ 320.00</span>
-                                </div>
-                                <div>
-                                    <p>Tot</p>
-                                    <span class="fish-price">$ 20.00</span>
-                                </div>
-                            </div>
-                        </div>
-    
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+						<div class="menu-item">
+							<div>
+								<h3>SWEET TREATS DESSERT</h3>
+							</div>
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>
+										FRENCH TOAST WITH FLAMBÉED <br />
+										FRUIT
+									</h4>
+									<span class="price">$ 8.90</span>
+								</div>
+							</div>
 
-    <div class="tc-border" style="margin-top: 80px;"></div>
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>
+										FRENCH TOAST WITH A SCOOP <br />
+										OF VANILLA ICE CREAM AND <br />
+										CARAMEL COULIS
+									</h4>
+									<span class="price">$ 8.90</span>
+								</div>
+							</div>
 
-    <!-- Footer -->
-    <footer class="footer" style="background-color: #292727;">
-        <div class="footer-container">
-            <div class="contact">
-                <div class="location">
-                    <p>Kigali - Rwanda</p>
-                    <p>Kimuhurura, KG 623 St</p>
-                </div>
-                <div class="footer-logo">
-                    <img src="project-logo.avif" alt="Logo">
-                    <div class="social-icons">
-                        <a><i class="fa-brands fa-facebook"></i></a>
-                        <a><i class="fa-brands fa-twitter"></i></a>
-                        <a><i class="fa-brands fa-instagram"></i></a>
-                    </div>
-                </div>
-                <div class="contact-info">
-                    <p>+250 791 375 628</p>
-                    <p>reservation@boho.rw</p>
-                    <p>info@boho.rw</p>
-                </div>
-            </div>
-            <div class="links">
-                <a href="#">FAQ</a>
-                <a href="terms&policies.html">Terms & Conditions</a>
-                <a href="terms&policies.html">Privacy Policy</a>
-                <a href="terms&policies.html">Shipping Policy</a>
-                <a href="terms&policies.html">Refund Policy</a>
-                <a href="terms&policies.html">Cookie Policy</a>
-            </div>
-            <small style="position: relative; top: 60px;">©2023 Boho</small>
-        </div> 
-    </footer>
-    <script src="home.js"></script>
-</body>
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>EXOTIC FRUITS SALAD</h4>
+									<span class="price">$ 8.90</span>
+								</div>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>CHOCOLATE DELICACY</h4>
+									<span class="price">$ 8.90</span>
+								</div>
+								<p>
+									Moelleux chocolate cake with <br />
+									chocolate sauce
+								</p>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>
+										Moelleux chocolate cake <br />
+										with chocolate sauce
+									</h4>
+									<span class="price">$ 8.90</span>
+								</div>
+								<p>
+									Coffee or African tea with <br />
+									mignardises
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="drinks-menu" style="display: none">
+				<h1>DRINKS MENU</h1>
+				<div class="menu-menu">
+					<div class="menu-cover menu-left">
+						<div class="menu-item">
+							<h3>SODA</h3>
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>FANTA ORANGE</h4>
+									<span class="price">$ 2.00</span>
+								</div>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>FANTA CITRON</h4>
+									<span class="price">$ 2.00</span>
+								</div>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>FANTA FIESTA</h4>
+									<span class="price">$ 2.00</span>
+								</div>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>COCA COLA</h4>
+									<span class="price">$ 2.00</span>
+								</div>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>SPRITE</h4>
+									<span class="price">$ 2.00</span>
+								</div>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>TONIC</h4>
+									<span class="price">$ 2.00</span>
+								</div>
+							</div>
+						</div>
+
+						<div class="menu-item">
+							<div>
+								<h3>WATER</h3>
+							</div>
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>INYANGE MINERAL WATER</h4>
+									<span class="price">$ 2.00</span>
+								</div>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>VIRUNGA STILL WATER</h4>
+									<span class="price">$ 2.00</span>
+								</div>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>VIRUNGA SPARKLING WATER</h4>
+									<span class="price">$ 2.00</span>
+								</div>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>VITALO</h4>
+									<span class="price">$ 2.00</span>
+								</div>
+							</div>
+						</div>
+
+						<div class="menu-item">
+							<h3>FRESH JUICES GLASS</h3>
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>PASSION JUICE</h4>
+									<span class="price">$ 7.00</span>
+								</div>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>MANGO JUICE</h4>
+									<span class="price">$ 7.00</span>
+								</div>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>COCKTAIL JUICE</h4>
+									<span class="price">$ 7.00</span>
+								</div>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>WATERMELON JUICE</h4>
+									<span class="price">$ 5.00</span>
+								</div>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>PINEAPPLE JUICE</h4>
+									<span class="price">$ 5.00</span>
+								</div>
+							</div>
+						</div>
+
+						<div class="menu-item">
+							<div>
+								<h3>SQUIZED DETOX JUICES</h3>
+							</div>
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>ORANGE-CAROT GINGER</h4>
+									<span class="price">$ 10.00</span>
+								</div>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>LEMONA DETOX</h4>
+									<span class="price">$ 10.00</span>
+								</div>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>CUCUMBER MINT DETOX</h4>
+									<span class="price">$ 7.00</span>
+								</div>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>BEET DETOX</h4>
+									<span class="price">$ 7.00</span>
+								</div>
+							</div>
+						</div>
+
+						<div class="menu-item">
+							<div>
+								<h3>ENERGY DRINK IN A CAN</h3>
+							</div>
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>RED BULL</h4>
+									<span class="price">$ 5.00</span>
+								</div>
+							</div>
+						</div>
+
+						<div class="menu-item">
+							<h3>SIGNATURE SMOOTHIES</h3>
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>TROPICAL BLISS</h4>
+									<span class="price">$ 8.00</span>
+								</div>
+								<p>
+									A refreshing blend of pineapple, <br />
+									mango, and coconut milk
+								</p>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>BERRY BURST</h4>
+									<span class="price">$ 8.00</span>
+								</div>
+								<p>
+									A mix of strawberries, blueberries, and banana with yogurt
+								</p>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>GREEN GODDESS</h4>
+									<span class="price">$ 10.00</span>
+								</div>
+								<p>Spinach, banana, and apple for a nutrient-packed option</p>
+							</div>
+						</div>
+
+						<div class="menu-item">
+							<h3>CLASSIC MILKSHAKES</h3>
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>VANILLA DREAM</h4>
+									<span class="price">$ 10.00</span>
+								</div>
+								<p>Creamy vanilla ice cream with a hint of vanilla extract</p>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>CHOCOLATE INDULGENCE</h4>
+									<span class="price">$ 8.00</span>
+								</div>
+								<p>Rich chocolate ice cream blended with chocolate fudge</p>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>STRAWBERRY SWIRL</h4>
+									<span class="price">$ 8.00</span>
+								</div>
+								<p>Fresh strawberries combined with strawberry ice cream</p>
+							</div>
+						</div>
+
+						<div class="menu-item">
+							<div>
+								<h3>TEA</h3>
+							</div>
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>AFRICAN TEA</h4>
+									<span class="price">$ 5.00</span>
+								</div>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>LEMON & GINGER TEA</h4>
+									<span class="price">$ 5.00</span>
+								</div>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>ICED TEA</h4>
+									<span class="price">$ 5.00</span>
+								</div>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>ENGLISH TEA/BLACK TEA</h4>
+									<span class="price">$ 5.00</span>
+								</div>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>GREEN TEA</h4>
+									<span class="price">$ 5.00</span>
+								</div>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>CHAMOMILE TEA</h4>
+									<span class="price">$ 5.00</span>
+								</div>
+							</div>
+						</div>
+
+						<div class="menu-item">
+							<div>
+								<h3>COFFEE</h3>
+							</div>
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>IRISH COFFEE</h4>
+									<span class="price">$ 12.00</span>
+								</div>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>CAPPUCCINO</h4>
+									<span class="price">$ 5.00</span>
+								</div>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>ESPRESSO DOUBLE</h4>
+									<span class="price">$ 5.00</span>
+								</div>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>CAFE LATTE</h4>
+									<span class="price">$ 5.00</span>
+								</div>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>CAFE MOCHA</h4>
+									<span class="price">$ 5.00</span>
+								</div>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>HOT CHOCOLATE</h4>
+									<span class="price">$ 4.50</span>
+								</div>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>ICED LATTE</h4>
+									<span class="price">$ 4.50</span>
+								</div>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>ICED MOCHA</h4>
+									<span class="price">$ 4.50</span>
+								</div>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>CLASSIC AMERICANO</h4>
+									<span class="price">$ 5.00</span>
+								</div>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>DECAFFEINATED COFFEE</h4>
+									<span class="price">$ 5.00</span>
+								</div>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>ICED AMERICANO</h4>
+									<span class="price">$ 5.00</span>
+								</div>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>ESPRESSO SINGLE</h4>
+									<span class="price">$ 3.00</span>
+								</div>
+							</div>
+						</div>
+
+						<div class="menu-item">
+							<div>
+								<h3>LOCAL BEERS</h3>
+							</div>
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>HEINEKEN</h4>
+									<span class="price">$ 3.00</span>
+								</div>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>AMSTEL</h4>
+									<span class="price">$ 3.00</span>
+								</div>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>MUTZING</h4>
+									<span class="price">$ 3.00</span>
+								</div>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>SKOL SELECT</h4>
+									<span class="price">$ 3.00</span>
+								</div>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>SKOL LAGER</h4>
+									<span class="price">$ 3.00</span>
+								</div>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>SKOL MALT</h4>
+									<span class="price">$ 3.00</span>
+								</div>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>VIRUNGA MIST</h4>
+									<span class="price">$ 3.00</span>
+								</div>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>VIRUNGA GOLD</h4>
+									<span class="price">$ 3.00</span>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="menu-cover menu-right">
+						<div class="menu-item">
+							<h3>DRAUGHT BEERS</h3>
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>AMSTEL</h4>
+									<span class="price">$ 4.00</span>
+								</div>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>MUTZING.</h4>
+									<span class="price">$ 4.00</span>
+								</div>
+							</div>
+						</div>
+
+						<div class="menu-item">
+							<div>
+								<h3>IMPORTED BEERS</h3>
+							</div>
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>LEFFE</h4>
+									<span class="price">$ 5.00</span>
+								</div>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>GUINNESS</h4>
+									<span class="price">$ 4.00</span>
+								</div>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>TUSKER LAGER</h4>
+									<span class="price">$ 4.00</span>
+								</div>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>TUSKER MALT</h4>
+									<span class="price">$ 4.00</span>
+								</div>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>SMIRNOFF ICE BLACK</h4>
+									<span class="price">$ 4.00</span>
+								</div>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>CARLSBERG</h4>
+									<span class="price">$ 5.00</span>
+								</div>
+							</div>
+						</div>
+
+						<div class="menu-item">
+							<h3>BEERS (NON-ALCOHOLIC)</h3>
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>BAVARIA NON-ALCOHOL</h4>
+									<span class="price">$ 3.00</span>
+								</div>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>PANACHE LEMON</h4>
+									<span class="price">$ 3.00</span>
+								</div>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>HEINEKEN0.0</h4>
+									<span class="price">$ 3.00</span>
+								</div>
+							</div>
+						</div>
+
+						<div class="menu-item">
+							<div>
+								<h3>RTD & BEERS</h3>
+							</div>
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>SAVANA CIDER</h4>
+									<span class="price">$ 6.00</span>
+								</div>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>TEQUILA SOMBRERO</h4>
+									<span class="price">$ 6.00</span>
+								</div>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>SMIRNOFF GUARANA</h4>
+									<span class="price">$ 5.00</span>
+								</div>
+							</div>
+						</div>
+
+						<div class="menu-item">
+							<div>
+								<h3>
+									COGNACS & SINGLE MALTS (BOTTLE <br />
+									& TOT)
+								</h3>
+							</div>
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>HENESSY XO</h4>
+									<span class="price">$ 1,200.00</span>
+								</div>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>COURVOISIER XO</h4>
+									<span class="price">$ 1,200.00</span>
+								</div>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>THE MACALLAN DOUBLE CASK 18YRS</h4>
+								</div>
+								<div class="fish-items">
+									<div>
+										<p>Bottle</p>
+										<span class="fish-price">$ 1,500.00</span>
+									</div>
+									<div>
+										<p>Tot</p>
+										<span class="fish-price">$ 90.00</span>
+									</div>
+								</div>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>MARTEL XO</h4>
+								</div>
+								<div class="fish-items">
+									<div>
+										<p>Bottle</p>
+										<span class="fish-price">$ 1,100.00</span>
+									</div>
+									<div>
+										<p>Tot</p>
+										<span class="fish-price">$ 60.00</span>
+									</div>
+								</div>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>ABK6 XO</h4>
+								</div>
+								<div class="fish-items">
+									<div>
+										<p>Bottle</p>
+										<span class="fish-price">$ 750.00</span>
+									</div>
+									<div>
+										<p>Tot</p>
+										<span class="fish-price">$ 45.00</span>
+									</div>
+								</div>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>HIGHLAND PARK 18 YRS</h4>
+									<span class="price">$ 350.00</span>
+								</div>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>THE MACALLAN DOUBLE CASK 15YRS</h4>
+								</div>
+								<div class="fish-items">
+									<div>
+										<p>Bottle</p>
+										<span class="fish-price">$ 750.00</span>
+									</div>
+									<div>
+										<p>Tot</p>
+										<span class="fish-price">$ 45.00</span>
+									</div>
+								</div>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>HENNESSY COURVOISIER V.S.O.P</h4>
+								</div>
+								<div class="fish-items">
+									<div>
+										<p>Bottle</p>
+										<span class="fish-price">$ 300.00</span>
+									</div>
+									<div>
+										<p>Tot</p>
+										<span class="fish-price">$ 18.00</span>
+									</div>
+								</div>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>HENNESSY V.S.O.P</h4>
+								</div>
+								<div class="fish-items">
+									<div>
+										<p>Bottle</p>
+										<span class="fish-price">$ 300.00</span>
+									</div>
+									<div>
+										<p>Tot</p>
+										<span class="fish-price">$ 18.00</span>
+									</div>
+								</div>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>HENNESSY V.S</h4>
+								</div>
+								<div class="fish-items">
+									<div>
+										<p>Bottle</p>
+										<span class="fish-price">$ 250.00</span>
+									</div>
+									<div>
+										<p>Tot</p>
+										<span class="fish-price">$ 15.00</span>
+									</div>
+								</div>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>MARTEL V.S.O.P</h4>
+								</div>
+								<div class="fish-items">
+									<div>
+										<p>Bottle</p>
+										<span class="fish-price">$ 300.00</span>
+									</div>
+									<div>
+										<p>Tot</p>
+										<span class="fish-price">$ 18.00</span>
+									</div>
+								</div>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>REMY MARTIN V.S.O.P</h4>
+								</div>
+								<div class="fish-items">
+									<div>
+										<p>Bottle</p>
+										<span class="fish-price">$ 300.00</span>
+									</div>
+									<div>
+										<p>Tot</p>
+										<span class="fish-price">$ 18.00</span>
+									</div>
+								</div>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>ABK6 VSOP DOMAINE</h4>
+								</div>
+								<div class="fish-items">
+									<div>
+										<p>Bottle</p>
+										<span class="fish-price">$ 250.00</span>
+									</div>
+									<div>
+										<p>Tot</p>
+										<span class="fish-price">$ 15.00</span>
+									</div>
+								</div>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>MARTEL V.S</h4>
+								</div>
+								<div class="fish-items">
+									<div>
+										<p>Bottle</p>
+										<span class="fish-price">$ 250.00</span>
+									</div>
+									<div>
+										<p>Tot</p>
+										<span class="fish-price">$ 15.00</span>
+									</div>
+								</div>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>REVISEUR VSOP</h4>
+								</div>
+								<div class="fish-items">
+									<div>
+										<p>Bottle</p>
+										<span class="fish-price">$ 200.00</span>
+									</div>
+									<div>
+										<p>Tot</p>
+										<span class="fish-price">$ 10.00</span>
+									</div>
+								</div>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>ABK6 VS PURE SINGLE</h4>
+								</div>
+								<div class="fish-items">
+									<div>
+										<p>Bottle</p>
+										<span class="fish-price">$ 200.00</span>
+									</div>
+									<div>
+										<p>Tot</p>
+										<span class="fish-price">$ 12.00</span>
+									</div>
+								</div>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>GLENROTHES 12 YRS</h4>
+								</div>
+								<div class="fish-items">
+									<div>
+										<p>Bottle</p>
+										<span class="fish-price">$ 150.00</span>
+									</div>
+									<div>
+										<p>Tot</p>
+										<span class="fish-price">$ 7.00</span>
+									</div>
+								</div>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>REVISEUR VS</h4>
+								</div>
+								<div class="fish-items">
+									<div>
+										<p>Bottle</p>
+										<span class="fish-price">$ 150.00</span>
+									</div>
+									<div>
+										<p>Tot</p>
+										<span class="fish-price">$ 8.00</span>
+									</div>
+								</div>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>THE MACALLAN TRIPLE CASK 12YRS</h4>
+								</div>
+								<div class="fish-items">
+									<div>
+										<p>Bottle</p>
+										<span class="fish-price">$ 350.00</span>
+									</div>
+									<div>
+										<p>Tot</p>
+										<span class="fish-price">$ 21.00</span>
+									</div>
+								</div>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>HIGHLAND PARK 12 YRS</h4>
+								</div>
+								<div class="fish-items">
+									<div>
+										<p>Bottle</p>
+										<span class="fish-price">$ 130.00</span>
+									</div>
+									<div>
+										<p>Tot</p>
+										<span class="fish-price">$ 7.00</span>
+									</div>
+								</div>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>GLENROTHES 10 YRS</h4>
+								</div>
+								<div class="fish-items">
+									<div>
+										<p>Bottle</p>
+										<span class="fish-price">$ 150.00</span>
+									</div>
+									<div>
+										<p>Tot</p>
+										<span class="fish-price">$ 15.00</span>
+									</div>
+								</div>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>ABK6 ICE</h4>
+								</div>
+								<div class="fish-items">
+									<div>
+										<p>Bottle</p>
+										<span class="fish-price">$ 130.00</span>
+									</div>
+									<div>
+										<p>Tot</p>
+										<span class="fish-price">$ 12.00</span>
+									</div>
+								</div>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>ABK6 ORANGE LIQUEUR</h4>
+								</div>
+								<div class="fish-items">
+									<div>
+										<p>Bottle</p>
+										<span class="fish-price">$ 150.00</span>
+									</div>
+									<div>
+										<p>Tot</p>
+										<span class="fish-price">$ 10.00</span>
+									</div>
+								</div>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>GLENLIVET 18YRS</h4>
+								</div>
+								<div class="fish-items">
+									<div>
+										<p>Bottle</p>
+										<span class="fish-price">$ 350.00</span>
+									</div>
+									<div>
+										<p>Tot</p>
+										<span class="fish-price">$ 20.00</span>
+									</div>
+								</div>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>GLENFIDDICH 18YRS</h4>
+								</div>
+								<div class="fish-items">
+									<div>
+										<p>Bottle</p>
+										<span class="fish-price">$ 350.00</span>
+									</div>
+									<div>
+										<p>Tot</p>
+										<span class="fish-price">$ 24.00</span>
+									</div>
+								</div>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>GLENLIVET 15YRS</h4>
+								</div>
+								<div class="fish-items">
+									<div>
+										<p>Bottle</p>
+										<span class="fish-price">$ 300.00</span>
+									</div>
+									<div>
+										<p>Tot</p>
+										<span class="fish-price">$ 18.00</span>
+									</div>
+								</div>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>GLENFIDDICH 15YRS</h4>
+								</div>
+								<div class="fish-items">
+									<div>
+										<p>Bottle</p>
+										<span class="fish-price">$ 320.00</span>
+									</div>
+									<div>
+										<p>Tot</p>
+										<span class="fish-price">$ 20.00</span>
+									</div>
+								</div>
+							</div>
+
+							<div class="menu-tab">
+								<div class="menu-border"></div>
+								<div class="meal">
+									<h4>GLENLIVET 12YRS</h4>
+								</div>
+								<div class="fish-items">
+									<div>
+										<p>Bottle</p>
+										<span class="fish-price">$ 320.00</span>
+									</div>
+									<div>
+										<p>Tot</p>
+										<span class="fish-price">$ 20.00</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+a
+		<div class="tc-border" style="margin-top: 80px"></div>
+
+		<!-- Footer -->
+		<footer class="footer">
+			<div class="footer-container">
+				<div class="contact">
+					<div class="location">
+						<p>Kigali - Rwanda</p>
+						<p>Kimuhurura, KG 623 St</p>
+					</div>
+					<div class="footer-logo">
+						<a href="home.html"><img src="project-logo.avif" alt="Logo" /></a>
+						<div class="social-icons">
+							<a><i class="fa-brands fa-facebook"></i></a>
+							<a><i class="fa-brands fa-twitter"></i></a>
+							<a><i class="fa-brands fa-instagram"></i></a>
+						</div>
+					</div>
+					<div class="contact-info">
+						<p>+250 791 375 628</p>
+						<a href="mailto:reservation@boho.rw">reservation@boho.rw</a>
+						<a href="mailto:info@boho.rw">info@boho.rw</a>
+					</div>
+				</div>
+				<div class="footer-links">
+					<a href="terms&policies.html">FAQ</a>
+					<a href="terms&policies.html">Terms & Conditions</a>
+					<a href="terms&policies.html">Privacy Policy</a>
+					<a href="terms&policies.html">Shipping Policy</a>
+					<a href="terms&policies.html">Refund Policy</a>
+					<a href="terms&policies.html">Cookie Policy</a>
+				</div>
+				<small>©2023 Boho</small>
+			</div>
+		</footer>
+
+		<script src="home.js"></script>
+        <script src="general.js"></script>
+	</body>
 </html>

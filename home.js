@@ -41,6 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
         window.location.href = 'calendar.html';
       });
     });
+    
     // Testimonials code (only on home.html)
     const containers = document.querySelectorAll('.testimonials-container');
     if (containers.length > 0) {
@@ -67,35 +68,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       });
     }
-
-    const closeCart = document.querySelector('.close-cart');
-    const cartSection = document.querySelector('.cart-section');
-    const overlay = document.querySelector('.overlay');
-
-    if (closeCart && cartSection) {
-      closeCart.addEventListener('click', () => {
-        cartSection.style.display = 'none';
-        overlay.style.display = "none";
-        nav.classList.remove('scrolled');
-        document.querySelector('.navigate').style.backgroundColor = 'rgba(41, 39, 39, 0.4)';
-      });
-    } else {
-      console.log('Element not found');
-    }
-
-    document.querySelector('.cart-icon').addEventListener('click', () => {
-      cartSection.style.display = "block";
-      overlay.style.display = "block";
-      document.querySelector('.navigate').style.backgroundColor = 'rgba(41, 39, 39, 0.1)';
-    })
-
-    const showCart = localStorage.getItem('showCart');
-
-    if (showCart === 'true') {
-      cartSection.style.display = "block";
-      overlay.style.display = "block";
-      localStorage.removeItem('showCart');
-    }
   }
 
   // Menu page code (run only on menu.html)
@@ -105,41 +77,35 @@ document.addEventListener('DOMContentLoaded', () => {
     const drinksLink = document.querySelector('.drinks-link');
     const foodMenu = document.querySelector('.food-menu');
     const drinksMenu = document.querySelector('.drinks-menu');
-    const menuSlideBorder = document.querySelector('.menu-slide-border');
 
-    if (foodLink && drinksLink && foodMenu && drinksMenu && menuSlideBorder) {
+    // Only run if elements exist (on menu page)
+    if (foodLink && drinksLink && foodMenu && drinksMenu) {
+      // Set initial active state
+      foodLink.classList.add('active');
+
       foodLink.addEventListener('click', (e) => {
-        e.preventDefault();
-        foodMenu.style.display = 'block';
-        drinksMenu.style.display = 'none';
-        menuSlideBorder.style.alignSelf = 'flex-start';
+          e.preventDefault();
+          
+          // Toggle menus
+          foodMenu.style.display = 'block';
+          drinksMenu.style.display = 'none';
+          
+          // Toggle active class
+          foodLink.classList.add('active');
+          drinksLink.classList.remove('active');
       });
 
       drinksLink.addEventListener('click', (e) => {
         e.preventDefault();
-        foodMenu.style.display = 'none';
+        
+        // Toggle menus
         drinksMenu.style.display = 'block';
-        menuSlideBorder.style.alignSelf = 'flex-end';
+        foodMenu.style.display = 'none';
+        
+        // Toggle active class
+        drinksLink.classList.add('active');
+        foodLink.classList.remove('active');
       });
     }
   }
-    
 });
-
-
-
-//   const review1 = document.querySelectorAll('.testimonials-container')[0];
-//   const review2 = document.querySelectorAll('.testimonials-container')[1];
-//   const arrows = document.querySelectorAll('.testimonials svg');
-
-//   arrows.forEach(arrow => {
-//     arrow.addEventListener('click', () => {
-//       if (review1.style.display === 'block') {
-//         review1.style.display = 'none';
-//         review2.style.display = 'block';
-//       } else {
-//         review1.style.display = 'block';
-//         review2.style.display = 'none';
-//       }
-//     });
-//   });

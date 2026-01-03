@@ -1,4 +1,5 @@
-// Load data from localStorage on page load
+//cart.js
+
 document.addEventListener('DOMContentLoaded', () => {
 
   const modal = document.getElementById('modal');
@@ -121,8 +122,6 @@ document.addEventListener('DOMContentLoaded', () => {
     totalElement.textContent = `$${total.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
   }
   
-  
-
   function addToCheckout() {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     if (cart.length === 0) {
