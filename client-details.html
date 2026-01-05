@@ -4,41 +4,46 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Responsive Calendar</title>
-		<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
-		<link rel="stylesheet" href="calendar.css" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;500&display=swap"
+			rel="stylesheet"
+		/>
 		<link rel="stylesheet" href="home.css" />
 		<link rel="stylesheet" href="cart.css" />
 		<link rel="stylesheet" href="clients-details.css" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+			rel="stylesheet"
+		/>
 	</head>
 	<body>
-        <div class="overlay"></div>
+		<div class="overlay"></div>
 
-        <!-- Mobile Sidebar -->
+		<!-- Mobile Sidebar -->
 		<div class="mobile-sidebar">
-            <div class="mobile-sidebar-header">
-                <div class="mobile-sidebar-logo">
-				    <img src="project-logo.avif" alt="Logo" />
-                </div>
+			<div class="mobile-sidebar-header">
+				<div class="mobile-sidebar-logo">
+					<img src="project-logo.avif" alt="Logo" />
+				</div>
 
-                <button class="mobile-sidebar-close">
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke-width="2"
-                        stroke="currentColor"
-                    >
-                        <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            d="M6 18 18 6M6 6l12 12"
-                        />
-                    </svg>
-                </button>
-            </div>
+				<button class="mobile-sidebar-close">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						fill="none"
+						viewBox="0 0 24 24"
+						stroke-width="2"
+						stroke="currentColor"
+					>
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							d="M6 18 18 6M6 6l12 12"
+						/>
+					</svg>
+				</button>
+			</div>
 			<nav class="mobile-nav-links">
 				<a href="home.html" class="mobile-nav-link">Home</a>
 				<a href="menu.html" class="mobile-nav-link">Menu</a>
@@ -48,6 +53,7 @@
 			</nav>
 		</div>
 
+		<!-- Cart section -->
 		<section class="cart-section">
 			<div class="cart-header">
 				<div class="cart-head">
@@ -55,13 +61,24 @@
 						<p>CART</p>
 						<p>(0 items)</p>
 					</div>
-					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="close-cart">
-						<path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						fill="none"
+						viewBox="0 0 24 24"
+						stroke-width="1.5"
+						stroke="currentColor"
+						class="close-cart"
+					>
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							d="M6 18 18 6M6 6l12 12"
+						/>
 					</svg>
 				</div>
-				<div class="cart-header-border"></div>    
+				<div class="cart-header-border"></div>
 			</div>
-			<div class="empty">
+			<div class="empty-cart">
 				<p>Your cart is empty.</p>
 			</div>
 
@@ -75,9 +92,10 @@
 				</div>
 				<button class="btn-purchase" type="button">Go To Checkout</button>
 			</div>
-    	</section>
+		</section>
 
-		<div id="modal">
+		<div class="details-modal-overlay"></div>
+		<div class="details-modal" id="details-modal">
 			<div class="modal-cover">
 				<div class="modal-header">
 					<h3>Session added to cart</h3>
@@ -167,7 +185,7 @@
 		</header>
 
 		<section class="client-section">
-			<div id="backBtn">
+			<div class="details-back-btn" id="backBtn">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					fill="none"
@@ -310,8 +328,6 @@
 			</div>
 		</section>
 
-		<div class="tc-border" style="margin-top: 80px"></div>
-
 		<!-- Footer -->
 		<footer class="footer">
 			<div class="footer-container">
@@ -346,8 +362,7 @@
 			</div>
 		</footer>
 
-		<!-- <script src="cart.js"></script> -->
-		<script src="client-details.js"></script>
 		<script src="general.js"></script>
+		<script src="client-details.js"></script>
 	</body>
 </html>

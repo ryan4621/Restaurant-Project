@@ -4,43 +4,45 @@ body {
     background-color: #292727;
     font-family: 'Montserrat', sans-serif;
 }
+
+.navigate {
+	background-color: #292727;
+}
+
 .c-section{
     display: flex;
     flex-direction: column;
-    position: relative;
-    top: 160px;
+    margin: 130px 0;
     align-items: center;
-    margin: 0 auto;
 }
+
 h1{
-    font-family: "Cinzel", serif;
-    font-size: 60px;
-    font-weight: 400;
-    letter-spacing: 2px;
-    margin: 0;
+    color: #fcedd4;
+	font-size: 2.8rem;
+	font-weight: 200;
+	margin-bottom: 60px;
+	font-family: "Cinzel", serif;
+	letter-spacing: 1px;
 }
+
 .c-sub{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     width: 65%;
-    height: 500px;
-    margin-top: 50px;
-
+    align-items: center;
+    margin-top: 20px;
 }
+
 .c-contact{
-    /* display: block; */
     display: flex;
     flex-direction: column;
-    /* padding: 40px 20px;
-    max-width: 500px; */
-    /* margin: 0 auto; */
     gap: clamp(20px, 1vw, 40px);
 }
+
 .c-tab{
     display: flex;
     flex-direction: row;
-    /* justify-content: center; */
     vertical-align: middle;
     align-items: flex-start;
     gap: 40px;
@@ -48,9 +50,8 @@ h1{
     font-weight: 100;
     padding-top: 20px;
     margin: 0;
-    
-    /* width: 75%; */
 }
+
 .c-tab svg{
     height: 35px;
     width: 35px;
@@ -59,35 +60,38 @@ h1{
     vertical-align: middle;
     margin: 0;
 }
+
 .c-tab p {
     margin: 0;
-    /* line-height: 1.6; */
 }
+
 .c-email-text{
     margin: 0;
     display: flex;
     flex-direction: column;
     line-height: 1.4;
 }
+
 .c-email-text > a{
-    /* font-weight: 200; */
     text-decoration: none;
     color: #ffffff;
 }
+
 .social-icons {
     margin: 0;
 }
+
 .social-icons a {
     font-size: 22px;
 }
+
 .contact-form {
     display: flex;
     flex-direction: column;
     width: 50%;
-    max-width: 600px;
     font-size: 15px;
     font-weight: 100;
-    margin-top: 10px;
+    gap: 10px;
 }
 
 .name {
@@ -113,7 +117,6 @@ h1{
     display: flex;
     flex-direction: column;
     gap: 5px;
-    margin-top: 15px;
     width: 100%;
 }
 
@@ -149,4 +152,57 @@ h1{
     font-weight: 300;
     background-color: transparent;
     border: 1px solid #616161;
+}
+
+@media (max-width: 992px) {
+	.c-sub {
+        flex-direction: column;
+    }
+
+    .contact-form {
+        width: 85%;
+    }
+
+    .c-contact {
+        width: 85%;
+    }
+
+    .c-contact {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .c-section {
+        margin-top: 100px
+    }
+
+    h1 {
+        font-size: 2.6rem;
+    }
+
+	.c-sub {
+        width: 80%;
+        margin-top: 7px;
+    }
+}
+
+@media (max-width: 576px) {
+    .c-section {
+        margin-top: 80px
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+	.c-sub {
+        width: 95%;
+    }
+}
+
+@media (max-width: 400px) {
+	.c-contact {
+        margin-top: 40px;
+    }
 }

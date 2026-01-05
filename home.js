@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // Home page code (run only on home.html)
   if (document.body.classList.contains('home-page')) {
 
-    // Home page specific code here
     const nav = document.querySelector('.navigate');
     if (nav) {
       window.addEventListener('scroll', function () {
@@ -15,18 +14,18 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    const links = document.querySelectorAll(".nav-link");
-    const currentPage = window.location.pathname.split("/").pop();
+    // const links = document.querySelectorAll(".nav-link");
+    // const currentPage = window.location.pathname.split("/").pop();
 
-    links.forEach(link => {
-      const linkPage = link.getAttribute("href").split("/").pop();
+    // links.forEach(link => {
+    //   const linkPage = link.getAttribute("href").split("/").pop();
 
-      if (linkPage === currentPage) {
-        link.classList.add("active");
-      } else {
-        link.classList.remove("active");
-      }
-    });
+    //   if (linkPage === currentPage) {
+    //     link.classList.add("active");
+    //   } else {
+    //     link.classList.remove("active");
+    //   }
+    // });
 
     document.querySelectorAll('.card-btn').forEach(btn => {
       btn.addEventListener('click', () => {
@@ -73,6 +72,21 @@ document.addEventListener('DOMContentLoaded', () => {
   // Menu page code (run only on menu.html)
   if (document.body.classList.contains('menu-page')) {
 
+    // const menuSlideLinks = document.querySelectorAll('.menu-slide-links');
+    // const menuSlide = document.querySelector('.menu-slide');
+
+    // menuSlideLinks.forEach(menuSlideLink => {
+    //   window.addEventListener('scroll', () => {
+    //     const linkBottom = menuSlide.getBoundingClientRect().bottom;
+        
+    //     if (linkBottom <= 110) {
+    //       menuSlideLink.classList.add('sticky');
+    //     } else {
+    //       menuSlideLink.classList.remove('sticky');
+    //     }
+    //   });
+    // });
+
     const foodLink = document.querySelector('.food-link');
     const drinksLink = document.querySelector('.drinks-link');
     const foodMenu = document.querySelector('.food-menu');
@@ -80,7 +94,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Only run if elements exist (on menu page)
     if (foodLink && drinksLink && foodMenu && drinksMenu) {
-      // Set initial active state
       foodLink.classList.add('active');
 
       foodLink.addEventListener('click', (e) => {

@@ -10,6 +10,7 @@
 		/>
 		<link rel="stylesheet" href="home.css" />
 		<link rel="stylesheet" href="contact.css" />
+		<link rel="stylesheet" href="cart.css" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
@@ -26,31 +27,31 @@
 		/>
 	</head>
 	<body>
-        <div class="overlay"></div>
+		<div class="overlay"></div>
 
-        <!-- Mobile Sidebar -->
+		<!-- Mobile Sidebar -->
 		<div class="mobile-sidebar">
-            <div class="mobile-sidebar-header">
-                <div class="mobile-sidebar-logo">
-				    <img src="project-logo.avif" alt="Logo" />
-                </div>
+			<div class="mobile-sidebar-header">
+				<div class="mobile-sidebar-logo">
+					<img src="project-logo.avif" alt="Logo" />
+				</div>
 
-                <button class="mobile-sidebar-close">
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke-width="2"
-                        stroke="currentColor"
-                    >
-                        <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            d="M6 18 18 6M6 6l12 12"
-                        />
-                    </svg>
-                </button>
-            </div>
+				<button class="mobile-sidebar-close">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						fill="none"
+						viewBox="0 0 24 24"
+						stroke-width="2"
+						stroke="currentColor"
+					>
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							d="M6 18 18 6M6 6l12 12"
+						/>
+					</svg>
+				</button>
+			</div>
 			<nav class="mobile-nav-links">
 				<a href="home.html" class="mobile-nav-link">Home</a>
 				<a href="menu.html" class="mobile-nav-link">Menu</a>
@@ -59,6 +60,47 @@
 				<a href="contact.html" class="mobile-nav-link">Contact</a>
 			</nav>
 		</div>
+
+		<!-- Cart sidebar -->
+		<section class="cart-section">
+			<div class="cart-header">
+				<div class="cart-head">
+					<div class="cart-name">
+						<p>CART</p>
+						<p>(0 items)</p>
+					</div>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						fill="none"
+						viewBox="0 0 24 24"
+						stroke-width="1.5"
+						stroke="currentColor"
+						class="close-cart"
+					>
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							d="M6 18 18 6M6 6l12 12"
+						/>
+					</svg>
+				</div>
+				<div class="cart-header-border"></div>
+			</div>
+			<div class="empty-cart">
+				<p>Your cart is empty.</p>
+			</div>
+
+			<div class="cart-total">
+				<div>
+					<span>Summary</span>
+				</div>
+				<div class="cart-total-item">
+					<span class="cart-total-title">Subtotal</span>
+					<span class="cart-total-price">$0</span>
+				</div>
+				<button class="btn-purchase" type="button">Go To Checkout</button>
+			</div>
+		</section>
 
 		<!-- Header -->
 		<header class="header2">
@@ -114,9 +156,32 @@
 			</div>
 		</header>
 
+		<!-- Contact section -->
 		<section class="c-section">
 			<h1>CONTACT</h1>
 			<div class="c-sub">
+				<form class="contact-form">
+					<div class="name">
+						<div>
+							<label for="firstName">First Name</label>
+							<input name="firstName" type="text" />
+						</div>
+						<div>
+							<label for="lastName">Last Name</label>
+							<input name="lastName" type="text" />
+						</div>
+					</div>
+					<div class="form email">
+						<label for="email">Email *</label>
+						<input name="email" type="text" />
+					</div>
+					<div class="form message">
+						<label for="message">Message</label>
+						<input name="message" type="text" />
+					</div>
+					<button type="submit" class="form-btn">Send</button>
+				</form>
+
 				<div class="c-contact">
 					<div class="c-tab c-location">
 						<svg
@@ -202,32 +267,8 @@
 						</div>
 					</div>
 				</div>
-
-				<form class="contact-form">
-					<div class="name">
-						<div style="gap: 5px">
-							<label for="firstName">First Name</label>
-							<input name="firstName" type="text" />
-						</div>
-						<div style="gap: 5px">
-							<label for="lastName">Last Name</label>
-							<input name="lastName" type="text" />
-						</div>
-					</div>
-					<div class="form email">
-						<label for="email">Email *</label>
-						<input name="email" type="text" />
-					</div>
-					<div class="form message">
-						<label for="message">Message</label>
-						<input name="message" type="text" />
-					</div>
-					<button type="submit" class="form-btn">Send</button>
-				</form>
 			</div>
 		</section>
-
-		<div class="tc-border" style="margin-top: 80px"></div>
 
 		<!-- Footer -->
 		<footer class="footer">
@@ -262,21 +303,6 @@
 				<small>©2023 Boho</small>
 			</div>
 		</footer>
-
-		<script>
-			const links = document.querySelectorAll(".nav-link");
-			const currentPage = window.location.pathname.split("/").pop();
-
-			links.forEach((link) => {
-				const linkPage = link.getAttribute("href").split("/").pop();
-
-				if (linkPage === currentPage) {
-					link.classList.add("active");
-				} else {
-					link.classList.remove("active");
-				}
-			});
-		</script>
 
 		<script src="general.js"></script>
 	</body>

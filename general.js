@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
     const cartIcon = document.querySelector('.cart-icon');
     const closeCartIcon = document.querySelector('.close-cart');
-    const cartSection = document.querySelector('.cart-section');
+    // const cartSection = document.querySelector('.cart-section');
 
     // Open mobile sidebar
     if (hamburgerMenu) {
@@ -86,134 +86,104 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Cart functionality
+    const cartSection = document.querySelector('.cart-section');
     const cartContainer = document.createElement('div');
     cartContainer.classList.add('cart-items');
-    if (cartSection) {
-        const cartTotal = cartSection.querySelector('.cart-total');
-        cartSection.insertBefore(cartContainer, cartTotal);
-    }
-
-    const cartCount = cartSection?.querySelector('.cart-name p:nth-child(2)');
-    const emptyMessage = cartSection?.querySelector('.empty');
+    cartSection.appendChild(cartContainer);
+    const cartCount = cartSection.querySelector('.cart-name p:nth-child(2)');
+    const emptyMessage = cartSection.querySelector('.empty-cart');
 
     function renderCartItems() {
-        const cart = JSON.parse(localStorage.getItem('cart')) || [];
-        cartContainer.innerHTML = '';
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cartContainer.innerHTML = '';
 
-        if (cart.length === 0) {
-            if (emptyMessage) emptyMessage.style.display = 'block';
-            if (cartCount) cartCount.textContent = '(0 items)';
-            return;
-        }
+    if (cart.length === 0) {
+      emptyMessage.style.display = 'block';
+      cartCount.textContent = '(0 items)';
+      return;
+    }
 
-        if (emptyMessage) emptyMessage.style.display = 'none';
-        if (cartCount) cartCount.textContent = `(${cart.length} item${cart.length > 1 ? 's' : ''})`;
+    emptyMessage.style.display = 'none';
+    cartCount.textContent = `(${cart.length} item${cart.length > 1 ? 's' : ''})`;
 
-        cart.forEach(({ title, date, price }) => {
-            const item = document.createElement('div');
-            item.className = 'cart-item-row';
-            item.innerHTML = `
-                <div class="cart-item-content">
-                    <div class="cart-item-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M21 11.25v8.25a1.5 1.5 0 0 1-1.5 1.5H5.25a1.5 1.5 0 0 1-1.5-1.5v-8.25M12 4.875A2.625 2.625 0 1 0 9.375 7.5H12m0-2.625V7.5m0-2.625A2.625 2.625 0 1 1 14.625 7.5H12m0 0V21m-8.625-9.75h18c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125h-18c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125Z" />
-                        </svg>
-                    </div>
-                    <div class="cart-item-details">
-                        <span class="cart-item-title">${title}</span>
-                        <span class="cart-item-date">${date}</span>
-                    </div>
+    cart.forEach(({ title, date, price }) => {
+      const item = document.createElement('div');
+      item.className = 'cart-row';
+      item.innerHTML = `
+        <div class="carting-box">
+          <div class="carting-left item">
+            <div class="cart-item">
+                <div class="cart-item-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 11.25v8.25a1.5 1.5 0 0 1-1.5 1.5H5.25a1.5 1.5 0 0 1-1.5-1.5v-8.25M12 4.875A2.625 2.625 0 1 0 9.375 7.5H12m0-2.625V7.5m0-2.625A2.625 2.625 0 1 1 14.625 7.5H12m0 0V21m-8.625-9.75h18c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125h-18c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125Z" />
+                  </svg>
                 </div>
-                <div class="cart-item-actions">
-                    <span class="cart-item-price">${price}</span>
-                    <button class="btn-remove">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
-                        </svg>
-                    </button>
+                <div class="cart-item-1">
+                    <span class="cart-item-title">${title}</span>
+                    <span class="cart-item-date">${date}</span>
                 </div>
-            `;
-            item.querySelector('.btn-remove').addEventListener('click', () => {
-                removeFromCart(title, date);
-            });
-            cartContainer.appendChild(item);
-        });
+            </div>
+            <div class="cart-item-2">
+                <span class="cart-item-price">${price}</span>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" "fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="btn-remove">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
+            </svg>
+          </div>
+        </div>`;
+      item.querySelector('.btn-remove').addEventListener('click', () => {
+        removeFromCart(title, date);
+        renderCartItems();
+      });
+      cartContainer.appendChild(item);
+    });
 
-        updateCartTotal();
+    updateCartTotal();
     }
 
     function removeFromCart(title, date) {
         let cart = JSON.parse(localStorage.getItem('cart')) || [];
         cart = cart.filter(item => !(item.title === title && item.date === date));
         localStorage.setItem('cart', JSON.stringify(cart));
+
         renderCartItems();
+        updateCartTotal();
     }
 
     function updateCartTotal() {
         const cart = JSON.parse(localStorage.getItem('cart')) || [];
         const totalElement = document.querySelector('.cart-total-price');
         if (!totalElement) return;
-
+    
         const total = cart.reduce((sum, item) => {
-            let price = item.price;
-            if (typeof price === 'string') {
-                price = parseFloat(price.replace(/[$,]/g, '').trim());
-            }
-            return sum + (isNaN(price) ? 0 : price);
+        let price = item.price;
+    
+        if (typeof price === 'string') {
+            price = parseFloat(price.replace(/[$,]/g, '').trim());
+        }
+    
+        return sum + (isNaN(price) ? 0 : price);
         }, 0);
-
+    
         totalElement.textContent = `$${total.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
     }
-
+    
     function addToCheckout() {
         const cart = JSON.parse(localStorage.getItem('cart')) || [];
         if (cart.length === 0) {
-            alert('Your cart is empty.');
-            return;
+        alert('Your cart is empty.');
+        return;
         }
+    
         alert('Reservation complete!');
+        document.querySelector('.cart-total').style.display = 'none';
         localStorage.removeItem('cart');
         renderCartItems();
+        updateCartTotal();
     }
 
-    // Initialize cart
     renderCartItems();
 
-    const purchaseBtn = document.querySelector('.btn-purchase');
-    if (purchaseBtn) {
-        purchaseBtn.addEventListener('click', addToCheckout);
-    }
+    document.querySelector('.btn-purchase').addEventListener('click', addToCheckout);
 
-    // Handle add to cart from other pages
-    const addToCartBtn = document.querySelector('.add-btn');
-    if (addToCartBtn) {
-        addToCartBtn.addEventListener('click', () => {
-            const title = localStorage.getItem('selectedTitle');
-            const date = localStorage.getItem('selectedDate');
-            const price = localStorage.getItem('selectedPrice');
-
-            if (!title || !date || !price) {
-                alert('Missing item details.');
-                return;
-            }
-
-            const cart = JSON.parse(localStorage.getItem('cart')) || [];
-            const exists = cart.some(item => item.title === title && item.date === date);
-            
-            if (exists) {
-                alert('This item has already been added to your cart.');
-                return;
-            }
-
-            cart.push({ title, date, price });
-            localStorage.setItem('cart', JSON.stringify(cart));
-            renderCartItems();
-            
-            // Open cart
-            cartSection.classList.add('active');
-            overlay.classList.add('active');
-            document.body.classList.add('sidebar-open');
-        });
-    }
 });

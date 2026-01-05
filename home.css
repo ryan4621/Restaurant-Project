@@ -637,7 +637,7 @@ body.sidebar-open {
 
 @media (max-width: 632px) {
 	.reservation h1 {
-		font-size: 2rem;
+		font-size: 1.6rem;
 	}
 	.reserve-container {
 		grid-template-columns: repeat(1, 1fr);
@@ -651,14 +651,27 @@ body.sidebar-open {
 }
 
 @media (max-width: 440px) {
+	.reservation {
+		padding: 0 20px;
+	}
 	.reservation h1 {
 		font-size: 1.4rem;
 	}
 	.card {
-		padding: 20px 35px;
+		padding: 20px 55px;
 	}
 	.card h3 {
 		font-size: 1rem;
+	}
+}
+
+@media (max-width: 352px) {
+	.reservation h1 {
+		font-size: 1.2rem;
+	}
+
+	.card {
+		padding: 20px 35px;
 	}
 }
 
@@ -698,7 +711,6 @@ body.sidebar-open {
 	text-align: center;
 	z-index: 2;
     gap: 45px;
-	padding: 20px;
 }
 
 .order-logo {
@@ -780,6 +792,7 @@ body.sidebar-open {
 @media (max-width: 768px) {
 	.order {
         height: 350px;
+        min-height: 350px;
     }
 
     .order-logo img {
@@ -798,8 +811,13 @@ body.sidebar-open {
 }
 
 @media (max-width: 576px) {
-	.order {
+    .order {
         height: 300px;
+        min-height: 300px;
+    }
+
+    .order::before {
+        background: url("IMG_2607.AVIF") center/cover no-repeat;
     }
 
     .order-logo img {
@@ -829,9 +847,29 @@ body.sidebar-open {
 }
 
 @media (max-width: 400px) {
+    .order {
+        height: 280px;
+        min-height: 280px;
+    }
+
 	.order-text span {
 		font-size: 24px;
 	}
+
+    .order-logo img {
+        height: 60px;
+    }
+
+    .order-text h3 {
+        font-size: 14px;
+    }
+
+    .order-btn {
+        height: 40px;
+        width: 120px;
+        font-size: 10px;
+        margin-top: 12px;
+    }
 }
 
 
@@ -1194,7 +1232,6 @@ body.sidebar-open {
 }
 
 .contact-info > a {
-	line-height: 1.5;
 	text-decoration: none;
 	color: #fff;
 	margin: 0;
@@ -1237,6 +1274,10 @@ a, i, button {
 }
 
 @media (max-width: 768px) {
+    .footer-container{
+        gap: 45px;
+    }
+
 	.contact {
 		flex-direction: column;
 		align-items: center;
@@ -1253,6 +1294,10 @@ a, i, button {
 		gap: 15px;
 		text-align: center;
 	}
+
+    .footer-links a {
+        text-decoration: none;
+    }
 }
 
 @media (max-width: 576px) {
@@ -1272,38 +1317,10 @@ a, i, button {
 
 	.footer-links a {
 		font-size: 13px;
+        text-decoration: none;
 	}
 
 	.footer-container small {
 		font-size: 12px;
 	}
 }
-
-/* Landscape Orientation Fix */
-/* @media (max-height: 500px) and (orientation: landscape) {
-    .header {
-        height: auto;
-        min-height: 400px;
-    }
-
-    .header::before {
-        height: 100%;
-    }
-
-    .cover {
-        margin-top: 100px;
-        margin-bottom: 50px;
-    }
-
-    .cover img {
-        height: 60px;
-    }
-
-    .cover h3 {
-        font-size: 24px;
-    }
-
-    .cover p {
-        font-size: 11px;
-    }
-} */

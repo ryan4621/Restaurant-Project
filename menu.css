@@ -1,4 +1,8 @@
 /* Base Styles */
+.navigate {
+	background-color: #292727;
+}
+
 body {
     background-color: #292727;
     color: #ffffff;
@@ -24,17 +28,23 @@ h3 {
     margin: 0;
 }
 
-/* Menu Section */
 .menu-section {
-    position: relative;
-    top: 120px;
-    width: 65%;
-    margin: 0 auto 60px;
-    background-color: #313030;
-    padding: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
-/* Menu Slide Links with Underline Animation */
+.menu-section-container {
+    margin-top: 120px;
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    background-color: #313030;
+    padding: 20px;
+    overflow: hidden;
+}
+
 .menu-slide {
     display: flex;
     flex-direction: column;
@@ -48,6 +58,14 @@ h3 {
     position: relative;
 }
 
+/* .menu-slide-links.sticky {
+    position: fixed;
+    top: 110px;
+    padding: 20px 0;
+    z-index: 2;
+    background-color: #313030;
+} */
+
 .menu-slide a {
     cursor: pointer;
     color: #fff;
@@ -58,7 +76,6 @@ h3 {
     transition: color 0.3s ease;
 }
 
-/* Underline effect */
 .menu-slide a::after {
     content: '';
     position: absolute;
@@ -78,7 +95,6 @@ h3 {
     color: #989695;
 }
 
-/* Menu Content */
 .food-menu, .drinks-menu {
     margin-top: 30px;
 }
@@ -99,7 +115,6 @@ h3 {
     margin-top: 50px;
 }
 
-/* Menu Borders and Tabs */
 .menu-border {
     border-top: 1px solid #62605f;
     width: 100%;
@@ -110,7 +125,6 @@ h3 {
     display: flex;
     flex-direction: column;
     width: 100%;
-    position: relative;
 }
 
 .meal {
@@ -173,4 +187,104 @@ h3 {
     margin: 10px 0;
     font-size: 0.92rem;
     font-weight: 200;
+}
+
+
+@media (max-width: 1024px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h3 {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-section-container {
+        margin-top: 100px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+
+    .menu-menu {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .menu-cover {
+        width: 100%;
+    }
+
+    .menu-item {
+        margin-top: 30px;
+    }
+
+    .meal h4 {
+        font-size: 0.85rem;
+        padding-right: 10px;
+    }
+
+    .menu-tab > p {
+        font-size: 0.85rem;
+        white-space: normal;
+    }
+
+    .price,
+    .fish-price {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .menu-section-container {
+        margin-top: 80px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.3rem;
+    }
+
+    h3 {
+        font-size: 1rem;
+    }
+
+    .menu-slide-links {
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .meal {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .meal h4 {
+        font-size: 0.8rem;
+        margin-bottom: 5px;
+    }
+
+    .price {
+        position: static;
+        margin-top: 5px;
+        font-size: 0.8rem;
+    }
+
+    .menu-tab > p {
+        font-size: 0.8rem;
+    }
+
+    .fish-items > div {
+        font-size: 0.8rem;
+    }
 }

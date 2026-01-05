@@ -1,44 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Responsive Calendar</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="calendar.css">
-  <link rel="stylesheet" href="home.css">
-  <link rel="stylesheet" href="cart.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-</head>
-<body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Calendar</title>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;500&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="home.css" />
+		<link rel="stylesheet" href="cart.css" />
+		<link rel="stylesheet" href="calendar.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<div class="overlay"></div>
 
-  <div class="overlay"></div>
-
-    <!-- Mobile Sidebar -->
+		<!-- Mobile Sidebar -->
 		<div class="mobile-sidebar">
-            <div class="mobile-sidebar-header">
-                <div class="mobile-sidebar-logo">
-				    <img src="project-logo.avif" alt="Logo" />
-                </div>
+			<div class="mobile-sidebar-header">
+				<div class="mobile-sidebar-logo">
+					<img src="project-logo.avif" alt="Logo" />
+				</div>
 
-                <button class="mobile-sidebar-close">
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke-width="2"
-                        stroke="currentColor"
-                    >
-                        <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            d="M6 18 18 6M6 6l12 12"
-                        />
-                    </svg>
-                </button>
-            </div>
+				<button class="mobile-sidebar-close">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						fill="none"
+						viewBox="0 0 24 24"
+						stroke-width="2"
+						stroke="currentColor"
+					>
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							d="M6 18 18 6M6 6l12 12"
+						/>
+					</svg>
+				</button>
+			</div>
 			<nav class="mobile-nav-links">
 				<a href="home.html" class="mobile-nav-link">Home</a>
 				<a href="menu.html" class="mobile-nav-link">Menu</a>
@@ -48,36 +53,48 @@
 			</nav>
 		</div>
 
-    <section class="cart-section">
-        <div class="cart-header">
-            <div class="cart-head">
-                <div class="cart-name">
-                    <p>CART</p>
-                    <p>(0 items)</p>
-                </div>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="close-cart">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-                </svg>
-            </div>
-            <div class="cart-header-border"></div>    
-        </div>
-        <div class="empty">
-            <p>Your cart is empty.</p>
-        </div>
+		<!-- Cart section -->
+		<section class="cart-section">
+			<div class="cart-header">
+				<div class="cart-head">
+					<div class="cart-name">
+						<p>CART</p>
+						<p>(0 items)</p>
+					</div>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						fill="none"
+						viewBox="0 0 24 24"
+						stroke-width="1.5"
+						stroke="currentColor"
+						class="close-cart"
+					>
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							d="M6 18 18 6M6 6l12 12"
+						/>
+					</svg>
+				</div>
+				<div class="cart-header-border"></div>
+			</div>
+			<div class="empty-cart">
+				<p>Your cart is empty.</p>
+			</div>
 
-        <div class="cart-total">
-            <div>
-                <span>Summary</span>
-            </div>
-            <div class="cart-total-item">
-                <span class="cart-total-title">Subtotal</span>
-                <span class="cart-total-price">$0</span>
-            </div>
-            <button class="btn-purchase" type="button">Go To Checkout</button>
-        </div>
-    </section>
+			<div class="cart-total">
+				<div>
+					<span>Summary</span>
+				</div>
+				<div class="cart-total-item">
+					<span class="cart-total-title">Subtotal</span>
+					<span class="cart-total-price">$0</span>
+				</div>
+				<button class="btn-purchase" type="button">Go To Checkout</button>
+			</div>
+		</section>
 
-    <!-- Header -->
+		<!-- Header -->
 		<header class="header2">
 			<div class="navigate">
 				<div class="nav">
@@ -131,131 +148,171 @@
 			</div>
 		</header>
 
-  <section class="schedule-section">
+		<section class="schedule-section">
+			<div class="sch-top">
+				<div class="calendar-back-btn" id="backBtn">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						fill="none"
+						viewBox="0 0 24 24"
+						stroke-width="1"
+						stroke="currentColor"
+						class="size-6"
+					>
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							d="M15.75 19.5 8.25 12l7.5-7.5"
+						/>
+					</svg>
+					<p>Back</p>
+				</div>
+				<h1>SCHEDULE YOUR SERVICE</h1>
+			</div>
 
-    <div class="sch-top">
-      <div id="backBtn">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="size-6">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
-        </svg>
-        <p>Back</p>
-      </div>
-      <h1>SCHEDULE YOUR SERVICE</h1>
-    </div>
+			<div class="schedule">
+				<div class="schedule-left">
+					<div class="date-time">
+						<div class="dt-text">
+							<h3>SELECT A DATE AND TIME</h3>
+							<p>Time zone: Central Africa Time (CAT)</p>
+						</div>
+					</div>
 
-    <div class="schedule">
-      <div class="schedule-left">
-        <div class="date-time">
-          <div class="dt-text">
-            <h3>SELECT A DATE AND TIME</h3>
-            <p>Time zone: Central Africa Time (CAT)</p>
-          </div>
-          <div class="dt-border"></div>
-        </div>
-  
-        <div class="sch-dt">
-          <div class="calendar">
-            <div class="calendar-header">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" id="prevMonth" class="size-6">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
-              </svg>
-              <span id="monthYear"></span>
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" id="nextMonth" class="size-6">
-                <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-              </svg>              
-            </div>
-            <div class="calendar-weekdays">
-              <div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div><div>Sun</div>
-            </div>
-            <div class="calendar-days" id="calendarDays">
-              <!-- Days will be injected here -->
-            </div>
-          </div>
-  
-          <div class="time-cover">
-            <p></p>
-            <div class="time">
-              <div class="time-box">
-                <p>08:00</p>
-              </div>
-    
-              <div class="time-box">
-                <p>10:00</p>
-              </div>
-    
-              <div class="time-box">
-                <p>12:00</p>
-              </div>
-    
-              <div class="time-box">
-                <p>14:00</p>
-              </div>
-    
-              <div class="time-box">
-                <p>16:00</p>
-              </div>
-    
-              <div class="time-box">
-                <p>18:00</p>
-              </div>
-    
-              <div class="time-box">
-                <p>20:00</p>
-              </div>
-    
-              <div class="time-box">
-                <p>22:00</p>
-              </div>
-    
-              <div class="time-box">
-                <p>00:00</p>
-              </div>
-    
-              <div class="time-box">
-                <p>02:00</p>
-              </div>
-            </div> 
-          </div>
-        </div>
-      </div>
+					<div class="dt-border"></div>
 
-      <!-- Right: Service Details -->
-      <div class="schedule-right">
+					<div class="sch-dt">
+						<div class="calendar">
+							<div class="calendar-header">
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									fill="none"
+									viewBox="0 0 24 24"
+									stroke-width="1"
+									stroke="currentColor"
+									id="prevMonth"
+									class="size-6"
+								>
+									<path
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										d="M15.75 19.5 8.25 12l7.5-7.5"
+									/>
+								</svg>
+								<span id="monthYear"></span>
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									fill="none"
+									viewBox="0 0 24 24"
+									stroke-width="1"
+									stroke="currentColor"
+									id="nextMonth"
+									class="size-6"
+								>
+									<path
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										d="m8.25 4.5 7.5 7.5-7.5 7.5"
+									/>
+								</svg>
+							</div>
+							<div class="calendar-weekdays">
+								<div>Mon</div>
+								<div>Tue</div>
+								<div>Wed</div>
+								<div>Thu</div>
+								<div>Fri</div>
+								<div>Sat</div>
+								<div>Sun</div>
+							</div>
+							<div class="calendar-days" id="calendarDays">
+								<!-- Days will be injected here -->
+							</div>
+						</div>
 
-        <div class="service-details">
-          <h3>SERVICE DETAILS</h3>
-          <div class="service-border"></div>
-        </div>
+                        <div class="mobile-dt-text">
+							<span>Time zone: Central Africa Time (CAT)</span>
+						</div>
+						<div class="mobile-dt-border"></div>
 
-        <div id="serviceDetails">
-          <div class="selection">
-            <p></p>
-            <p></p>
-          </div>
+						<div class="time-cover">
+							<p></p>
+							<div class="time">
+								<div class="time-box">
+									<p>08:00</p>
+								</div>
 
-          <div class="selection2">
-            <p>BOHO RESTAURANT</p>
-            <p></p>
-          </div>
-        </div>
-        <button class="service-btn">Next</button>
-      </div>
-    </div>
+								<div class="time-box">
+									<p>10:00</p>
+								</div>
 
-    <p id="selectedDate" style="text-align: center; margin-top: 10px; color: #fff;"></p>
-  
-    <h3 id="availabilityLabel"></h3>
-    <div class="time-slots" id="timeSlots"></div>
-  
-        
+								<div class="time-box">
+									<p>12:00</p>
+								</div>
 
-      </div>
-    </div>
-  </section>
+								<div class="time-box">
+									<p>14:00</p>
+								</div>
 
-  <div class="tc-border" style="margin-top: 80px;"></div>
+								<div class="time-box">
+									<p>16:00</p>
+								</div>
 
-    <!-- Footer -->
+								<div class="time-box">
+									<p>18:00</p>
+								</div>
+
+								<div class="time-box">
+									<p>20:00</p>
+								</div>
+
+								<div class="time-box">
+									<p>22:00</p>
+								</div>
+
+								<div class="time-box">
+									<p>00:00</p>
+								</div>
+
+								<div class="time-box">
+									<p>02:00</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="schedule-right">
+					<div class="service-details">
+						<h3>SERVICE DETAILS</h3>
+						<div class="service-border"></div>
+					</div>
+
+					<div id="serviceDetails">
+						<div class="selection">
+							<p></p>
+							<p></p>
+						</div>
+
+						<div class="selection2">
+							<p>BOHO RESTAURANT</p>
+							<p></p>
+						</div>
+					</div>
+					<button class="service-btn">Next</button>
+				</div>
+			</div>
+
+			<p
+				id="selectedDate"
+				style="text-align: center; margin-top: 10px; color: #fff"
+			></p>
+
+			<h3 id="availabilityLabel"></h3>
+			<div class="time-slots" id="timeSlots"></div>
+		</section>
+
+		<!-- Footer -->
 		<footer class="footer">
 			<div class="footer-container">
 				<div class="contact">
@@ -289,7 +346,7 @@
 			</div>
 		</footer>
 
-  <script src="calendar.js"></script>
-  <script src="general.js"></script>
-</body>
+		<script src="calendar.js"></script>
+		<script src="general.js"></script>
+	</body>
 </html>
