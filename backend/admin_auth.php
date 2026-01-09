@@ -1,12 +1,11 @@
 <?php
 session_start();
-include 'db_connect.php'; // Your DB connection file
+include 'db_connect.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    // Fetch user from DB
     $stmt = $conn->prepare("SELECT * FROM admin_users WHERE username = ?");
     $stmt->bind_param("s", $username);
     $stmt->execute();

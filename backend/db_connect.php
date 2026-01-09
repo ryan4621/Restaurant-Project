@@ -2,7 +2,7 @@
 $host = "localhost";
 $user = "root";
 $pass = "";
-$dbname = "restaurant_db"; // replace this with your actual database name
+$dbname = "restaurant_db";
 
 $conn = new mysqli($host, $user, $pass, $dbname);
 

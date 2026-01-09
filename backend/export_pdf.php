@@ -10,7 +10,6 @@ $pdf = new FPDF('L');
 $pdf->AddPage();
 $pdf->SetFont('Arial', 'B', 10);
 
-// Table headers
 $pdf->Cell(10, 10, 'ID', 1);
 $pdf->Cell(30, 10, 'Name', 1);
 $pdf->Cell(60, 10, 'Email', 1);
@@ -21,7 +20,6 @@ $pdf->Cell(20, 10, 'Price', 1);
 $pdf->Cell(20, 10, 'Status', 1);
 $pdf->Ln();
 
-// Query and check result
 $result = $conn->query("SELECT id, name, email, reservation_date, phone, reservation_title, reservation_price, status FROM reservations");
 
 if ($result) {

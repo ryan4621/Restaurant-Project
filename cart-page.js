@@ -1,164 +1,3 @@
-// if (document.readyState == 'loading') {
-//     document.addEventListener('DOMContentLoaded', ready);
-// } else {
-//     ready()
-//   }
-
-//   function ready() {
-//     var removeCartItemButtons = document.getElementsByClassName('btn-remove');
-//     for (var i = 0; i < removeCartItemButtons.length; i++) {
-//       var button = removeCartItemButtons[i];
-//       button.addEventListener('click', removeCartItem);
-//     }
-  
-//     const storedTitle = localStorage.getItem('selectedTitle');
-//     const storedDate = localStorage.getItem('selectedDate');
-//     const storedPrice = localStorage.getItem('selectedPrice');
-
-//     const title = storedTitle || "Untitled";
-//     const date = storedDate || "No date";
-//     const price = storedPrice || "$0.00";
-  
-//     if (title && date && price) {
-//       addItemToCart(title, date, price);
-//       updateCartTotal();
-//       showTotal();
-//     }
-  
-//     const purchaseBtn = document.getElementsByClassName('btn-purchase')[0];
-//     if (purchaseBtn) {
-//       purchaseBtn.addEventListener('click', purchaseClicked);
-//     }
-//   }
-   
-
-// function purchaseClicked() {
-//   alert('Thank you for your purchase')
-//   var cartItemsContainer = document.getElementsByClassName('cart-items')[0]
-//   while (cartItemsContainer.hasChildNodes()) {
-//     cartItemsContainer.removeChild(cartItemsContainer.firstChild)
-//   }
-  
-// //   const item = document.getElementsByClassName('item');
-
-//   const cartTotal = document.querySelector('.cart-total');
-//   cartTotal.style.display = 'none';
-
-//   var cartBadge = document.getElementsByClassName("cart-badge")[0];
-//   cartBadge.style.display = 'none';
-
-//   updateCartTotal()
-// }
-
-// var cartCount = 0;
-// function removeCartItem(event) {
-//   var buttonClicked = event.target
-//   const cartRow = buttonClicked.closest('.cart-row');
-//   if (cartRow) {
-//     cartRow.remove();
-//   }
-//   const item = document.getElementsByClassName('item');
-
-//   if (item.length === 0) {
-//     document.querySelector('.cart-total').style.display = 'none';
-//     document.getElementsByClassName("cart-badge")[0].style.display = 'none';
-//   }
-
-//   cartCount = document.getElementsByClassName('item').length;
-//   document.getElementsByClassName("cart-badge")[0].textContent = cartCount;
-
-//   updateCartTotal()
-// }
-
-// function showTotal() {
-//   const cartTotal = document.querySelector('.cart-total');
-//   cartTotal.style.display = 'flex';
-
-//   updateCartTotal()
-// }
-
-// // var cartCount = 0;
-// // function addItemsToCart(event) {
-// //   cartCount++;
-// //   var cartBadge = document.getElementsByClassName("cart-badge")[0];
-// //   cartBadge.style.display = 'block';
-// //   cartBadge.textContent = cartCount;
-
-// //   updateCartTotal()
-// // }
-
-// function addToCartClicked() {
-//   const storedTitle = localStorage.getItem('selectedTitle');
-//   const storedDate = localStorage.getItem('selectedDate');
-//   const storedPrice = localStorage.getItem('selectedPrice');
-
-//   // Fallback/defaults if any values are missing
-//   const title = storedTitle || "Untitled";
-//   const date = storedDate || "No date";
-//   const price = storedPrice || "$0.00";
-
-//   addItemToCart(title, date, price,);
-//   updateCartTotal();
-// }
-
-
-// function addItemToCart(title, date, price,) {
-//   var cartRow = document.createElement('div')
-//   cartRow.classList.add('cart-row')
-//   var cartItemsContainer = document.getElementsByClassName('cart-items')[0]
-//   var cartItemNames = cartItemsContainer.getElementsByClassName('cart-item-title')
-//   for (var i = 0; i < cartItemNames.length; i++) {
-//     if (cartItemNames[i].innerText == title) {
-//       alert('This item has already been added to your cart.')
-//       return 
-//     }
-//   }
-  
-//   var cartRowContents = `
-//     <div class="carting-box">
-//       <div class="carting-left item">
-//           <div class="cart-item">
-//               <div class="cart-item-icon">
-//                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-//                   <path stroke-linecap="round" stroke-linejoin="round" d="M21 11.25v8.25a1.5 1.5 0 0 1-1.5 1.5H5.25a1.5 1.5 0 0 1-1.5-1.5v-8.25M12 4.875A2.625 2.625 0 1 0 9.375 7.5H12m0-2.625V7.5m0-2.625A2.625 2.625 0 1 1 14.625 7.5H12m0 0V21m-8.625-9.75h18c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125h-18c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125Z" />
-//                 </svg>
-//               </div>
-//               <div class="cart-item-1">
-//                   <span class="cart-item-title">${title}</span>
-//                   <span class="cart-item-name">${date}</span>
-//               </div>
-//           </div>
-//           <div class="cart-item-2">
-//               <span class="cart-item-price">${price}</span>
-//           </div>
-
-//           <i class="bi bi-x btn-remove"></i>
-//       </div>
-//     </div>
-      
-//       `
-//   cartRow.innerHTML = cartRowContents
-//   cartItemsContainer.append(cartRow)
-//   cartRow.getElementsByClassName('btn-remove')[0].addEventListener('click', removeCartItem)
-// }
-
-// function updateCartTotal() {
-//   var cartItemContainer = document.getElementsByClassName('cart-items')[0];
-//   var cartRows = cartItemContainer.getElementsByClassName('cart-row');
-//   total = 0
-//   for (var i = 0; i < cartRows.length; i++) {
-//     var cartRow = cartRows[i]
-//     var priceElement = cartRow.getElementsByClassName('cart-item-price')[0];
-//     var price = parseFloat(priceElement.innerText.replace('$', ''))
-//     total = total + price;
-//   }
-//   total = Math.round(total * 100) / 100
-//   document.getElementsByClassName('cart-sub-total-price')[0].innerText = '$' + total + '.00'
-// //   totalValue = Math.round(total + 24)
-// //   document.getElementsByClassName('cart-total-price')[0].innerText = 'USD ' + '$' + totalValue + '.00'
-// }
-
-
 if (document.readyState == 'loading') {
   document.addEventListener('DOMContentLoaded', ready);
 } else {
@@ -176,7 +15,7 @@ function ready() {
 
   cartItems.forEach(item => {
     console.log("Adding item to cart:", item);
-    addItemToCart(item.title, item.date, item.price, true); // skipCheck = true
+    addItemToCart(item.title, item.date, item.price, true);
   });
 
   updateCartTotal();
@@ -218,17 +57,14 @@ function removeCartItem(event) {
   const titleToRemove = titleElement ? titleElement.textContent : null;
   const dateToRemove = dateElement ? dateElement.textContent : null;
 
-  // Remove from DOM
   cartRow.remove();
 
-  // Remove from localStorage
   const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
   const updatedCart = storedCart.filter(item => {
     return !(item.title === titleToRemove && item.date === dateToRemove);
   });
   localStorage.setItem('cart', JSON.stringify(updatedCart));
 
-  // updateCartCount();
   updateCartTotal();
 }
 
@@ -264,7 +100,6 @@ function addItemToCart(title, date, price) {
   cart.push({ title, date, price });
   localStorage.setItem('cart', JSON.stringify(cart));
 
-  // Create the new cart row element
   var cartRow = document.createElement('div');
   cartRow.classList.add('cart-row');
   var cartItemsContainer = document.getElementsByClassName('cart-items')[0];

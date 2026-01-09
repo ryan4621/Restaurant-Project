@@ -18,16 +18,14 @@ if ($result->num_rows === 0) {
 
 $reservation = $result->fetch_assoc();
 
-// Handle cancellation request
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cancel'])) {
-    // Cancel the reservation (delete from database)
     $deleteStmt = $conn->prepare("DELETE FROM reservations WHERE token = ?");
     $deleteStmt->bind_param("s", $token);
     $deleteStmt->execute();
     $deleteStmt->close();
 
     echo "Your reservation has been cancelled.";
-    exit; // Stop further processing
+    exit;
 }
 ?>
 
@@ -41,7 +39,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cancel'])) {
     <li><strong>Price:</strong> $<?php echo htmlspecialchars($reservation['reservation_price']); ?></li>
 </ul>
 
-<!-- Cancel button -->
 <form method="POST" onsubmit="return confirm('Are you sure you want to cancel this reservation?');">
     <input type="hidden" name="token" value="<?php echo htmlspecialchars($token); ?>">
     <button type="submit" name="cancel" style="padding:10px 15px; background-color:#d9534f; color:white; border:none; border-radius:5px; cursor:pointer;">

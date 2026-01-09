@@ -1,27 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Calendar</title>
-		<link
-			href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;500&display=swap"
-			rel="stylesheet"
-		/>
-		<link rel="stylesheet" href="home.css" />
-		<link rel="stylesheet" href="cart.css" />
-		<link rel="stylesheet" href="calendar.css" />
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
-			rel="stylesheet"
-		/>
+		<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="home.css">
+		<link rel="stylesheet" href="cart.css">
+		<link rel="stylesheet" href="calendar.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 	</head>
 	<body>
 		<div class="overlay"></div>
 
-		<!-- Mobile Sidebar -->
 		<div class="mobile-sidebar">
 			<div class="mobile-sidebar-header">
 				<div class="mobile-sidebar-logo">
@@ -53,7 +46,6 @@
 			</nav>
 		</div>
 
-		<!-- Cart section -->
 		<section class="cart-section">
 			<div class="cart-header">
 				<div class="cart-head">
@@ -82,6 +74,8 @@
 				<p>Your cart is empty.</p>
 			</div>
 
+			<div class="cart-items"></div>
+
 			<div class="cart-total">
 				<div>
 					<span>Summary</span>
@@ -94,7 +88,6 @@
 			</div>
 		</section>
 
-		<!-- Header -->
 		<header class="header2">
 			<div class="navigate">
 				<div class="nav">
@@ -225,12 +218,10 @@
 								<div>Sat</div>
 								<div>Sun</div>
 							</div>
-							<div class="calendar-days" id="calendarDays">
-								<!-- Days will be injected here -->
-							</div>
+							<div class="calendar-days" id="calendarDays"></div>
 						</div>
 
-                        <div class="mobile-dt-text">
+						<div class="mobile-dt-text">
 							<span>Time zone: Central Africa Time (CAT)</span>
 						</div>
 						<div class="mobile-dt-border"></div>
@@ -312,7 +303,6 @@
 			<div class="time-slots" id="timeSlots"></div>
 		</section>
 
-		<!-- Footer -->
 		<footer class="footer">
 			<div class="footer-container">
 				<div class="contact">

@@ -167,7 +167,6 @@ form input:focus{
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    /* line-height: 1; */
 }
 
 .booking-details svg{
@@ -193,7 +192,6 @@ form input:focus{
     display: flex;
     flex-direction: column;
     line-height: 0;
-    /* padding: 20px 0 20px 0; */
     gap: 8px;
 }
 
@@ -275,7 +273,6 @@ form input:focus{
 
 .modal-cover{
     width: 90%;
-    /* margin: 0 auto; */
     margin: 0;
 }
 
@@ -300,12 +297,9 @@ form input:focus{
 
 .modal-details{
     font-family: 'Montserrat', sans-serif;
-    /* gap: 10px; */
-    /* margin-top: 30px; */
 }
 
 .modal-info{
-    /* margin-top: 10px; */
     line-height: 0.7;
     font-size: 0.9rem;
     font-weight: 300;
@@ -318,7 +312,6 @@ form input:focus{
     flex-direction: row;
     gap: 10px;
     margin-top: 40px;
-    /* justify-content: space-between; */
 }
 
 .view-cart{
@@ -331,6 +324,7 @@ form input:focus{
     width: 60%;
     background-color: #000;
     border: none;
+    color: #fff;
 }
 
 .continue-browsing:hover{

@@ -1,27 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Responsive Calendar</title>
-		<link
-			href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;500&display=swap"
-			rel="stylesheet"
-		/>
-		<link rel="stylesheet" href="home.css" />
-		<link rel="stylesheet" href="cart.css" />
-		<link rel="stylesheet" href="clients-details.css" />
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
-			rel="stylesheet"
-		/>
+		<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="home.css">
+		<link rel="stylesheet" href="cart.css">
+		<link rel="stylesheet" href="clients-details.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 	</head>
 	<body>
 		<div class="overlay"></div>
 
-		<!-- Mobile Sidebar -->
 		<div class="mobile-sidebar">
 			<div class="mobile-sidebar-header">
 				<div class="mobile-sidebar-logo">
@@ -53,7 +46,6 @@
 			</nav>
 		</div>
 
-		<!-- Cart section -->
 		<section class="cart-section">
 			<div class="cart-header">
 				<div class="cart-head">
@@ -82,6 +74,8 @@
 				<p>Your cart is empty.</p>
 			</div>
 
+			<div class="cart-items"></div>
+
 			<div class="cart-total">
 				<div>
 					<span>Summary</span>
@@ -94,43 +88,6 @@
 			</div>
 		</section>
 
-		<div class="details-modal-overlay"></div>
-		<div class="details-modal" id="details-modal">
-			<div class="modal-cover">
-				<div class="modal-header">
-					<h3>Session added to cart</h3>
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						fill="none"
-						viewBox="0 0 24 24"
-						stroke-width="1.5"
-						stroke="currentColor"
-						class="size-6"
-					>
-						<path
-							stroke-linecap="round"
-							stroke-linejoin="round"
-							d="M6 18 18 6M6 6l12 12"
-						/>
-					</svg>
-				</div>
-				<div class="modal-details">
-					<div class="modal-info">
-						<p></p>
-						<p></p>
-					</div>
-
-					<div class="modal-btns">
-						<button class="view-cart">View Cart</button>
-						<button class="continue-browsing">
-							<a href="#">Continue Browsing</a>
-						</button>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<!-- Header -->
 		<header class="header2">
 			<div class="navigate">
 				<div class="nav">
@@ -209,14 +166,12 @@
 						<h3>Client Details</h3>
 						<div class="dt-border"></div>
 					</div>
-
 					<div class="client-form-second">
 						<p>
 							Already have an account?
 							<a href="#" style="color: #d1d1d1">Log In</a> for faster booking.
 						</p>
 					</div>
-
 					<form
 						id="userForm"
 						method="POST"
@@ -224,23 +179,21 @@
 					>
 						<div class="form-first">
 							<div>
-								<label for="names">Names*</label>
-								<input id="name" name="names" type="text" />
+								<label for="name">Names*</label>
+								<input id="name" name="names" type="text" required />
 								<p id="nameError" class="error-message"></p>
 							</div>
-
 							<div>
 								<label for="email">Email*</label>
-								<input id="email" name="email" type="email" />
+								<input id="email" name="email" type="email" required />
 								<p id="emailError" class="error-message"></p>
 							</div>
 						</div>
 						<div class="form-second">
 							<label for="phone">Phone Number*</label>
-							<input id="phone" name="phone" type="text" />
+							<input id="phone" name="phone" type="text" required />
 							<p id="phoneError" class="error-message"></p>
 						</div>
-
 						<input
 							type="hidden"
 							name="reservation_title"
@@ -259,7 +212,6 @@
 					</form>
 				</div>
 
-				<!-- Right: Service Details -->
 				<div class="booking">
 					<div class="booking-details">
 						<p>Booking Details</p>
@@ -293,21 +245,18 @@
 							/>
 						</svg>
 					</div>
-
 					<div style="display: flex; flex-direction: column; gap: 2.4vh">
 						<div class="booking-info">
 							<div class="selection">
 								<p></p>
 								<p class="selected-date"></p>
 							</div>
-
 							<div class="selection2">
 								<p>BOHO RESTAURANT</p>
 								<p></p>
 							</div>
 						</div>
 						<div class="service-border"></div>
-
 						<div class="payment-details">
 							<p>Payment Details</p>
 							<div class="payment-total">
@@ -316,19 +265,52 @@
 							</div>
 						</div>
 						<div class="service-border"></div>
-
 						<a href="#">View Policy</a>
-
 						<div class="booking-btns">
-							<button class="add-btn">Add to Cart</button>
-							<button class="book-btn">Book Now</button>
+							<button class="add-btn" type="button">Add to Cart</button>
+							<button class="book-btn" type="button">Book Now</button>
 						</div>
 					</div>
 				</div>
 			</div>
 		</section>
 
-		<!-- Footer -->
+		<div class="details-modal-overlay"></div>
+		<div class="details-modal" id="details-modal">
+			<div class="modal-cover">
+				<div class="modal-header">
+					<h3>Session added to cart</h3>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						fill="none"
+						viewBox="0 0 24 24"
+						stroke-width="1.5"
+						stroke="currentColor"
+						class="size-6"
+					>
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							d="M6 18 18 6M6 6l12 12"
+						/>
+					</svg>
+				</div>
+				<div class="modal-details">
+					<div class="modal-info">
+						<p></p>
+						<p></p>
+					</div>
+
+					<div class="modal-btns">
+						<button class="view-cart">View Cart</button>
+						<button class="continue-browsing">
+							<a href="#">Continue Browsing</a>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
 		<footer class="footer">
 			<div class="footer-container">
 				<div class="contact">

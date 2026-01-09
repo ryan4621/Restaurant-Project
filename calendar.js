@@ -75,19 +75,17 @@ window.addEventListener('DOMContentLoaded', () => {
         calendarDays.innerHTML = '';
         const firstDay = new Date(currentYear, currentMonth, 1);
         const lastDay = new Date(currentYear, currentMonth + 1, 0);
-        const startDay = (firstDay.getDay() + 6) % 7; // convert Sunday=0 to end of week
+        const startDay = (firstDay.getDay() + 6) % 7;
         const daysInMonth = lastDay.getDate();
     
         monthYear.textContent = `${firstDay.toLocaleString('default', { month: 'long' })} ${currentYear}`;
     
-        // Fill empty slots before first day
         for (let i = 0; i < startDay; i++) {
         const empty = document.createElement('div');
         empty.classList.add('empty');
         calendarDays.appendChild(empty);
         }
     
-        // Fill actual days
         for (let i = 1; i <= daysInMonth; i++) {
         const day = document.createElement('div');
         day.textContent = i;
@@ -113,8 +111,6 @@ window.addEventListener('DOMContentLoaded', () => {
         if (isSelected) {
             day.classList.add('selected');
         }
-
-        // isToday = isSelected
     
         const isPast = thisDate < new Date(now.getFullYear(), now.getMonth(), now.getDate());
     
@@ -180,74 +176,18 @@ window.addEventListener('DOMContentLoaded', () => {
         const selectedPrice = selection2.children[1];
         selectedPrice.textContent = storedPrice;
     }
+
+    function cleanDateString(dateStr) {
+        return dateStr.replace(/\s+/g, ' ').trim();
+    }
+
+    localStorage.setItem('selectedDate', cleanDateString(pickedDate));
+    
     
     document.querySelector('.service-btn').addEventListener('click', () => { 
         const pickedDate = secondP.textContent;
-        localStorage.setItem('selectedDate', pickedDate);
-        
+        localStorage.setItem('selectedDate', cleanDateString(pickedDate));
         window.location.href = 'client-details.html';
     });
 
 });
-
-
-
-
-
-
-
-// const timeSlotsEl = document.getElementById('timeSlots');
-// const serviceDetailsEl = document.getElementById('serviceDetails');
-// const availabilityLabel = document.getElementById('availabilityLabel');
-
-// // Replace with dynamic service info from clicked card if needed
-// const serviceInfo = {
-//   title: "Muhabura: 2 Seats",
-//   location: "Boho",
-//   restaurant: "BOHO RESTAURANT",
-//   duration: "10 min",
-//   price: "RF 50,000"
-// };
-
-// let selectedTime = null; // Assuming selectedDate already handled
-
-// function renderTimeSlots() {
-//   timeSlotsEl.innerHTML = '';
-//   const times = ["08:00", "08:30", "09:00", "09:30", "10:00", "10:30",
-//                  "11:00", "11:30", "12:00", "12:30", "13:00", "13:30",
-//                  "14:00", "14:30", "15:00", "15:30"];
-
-//   times.forEach(time => {
-//     const slot = document.createElement('div');
-//     slot.textContent = time;
-//     slot.className = 'time-slot';
-//     slot.addEventListener('click', () => {
-//       document.querySelectorAll('.time-slot').forEach(t => t.classList.remove('selected'));
-//       slot.classList.add('selected');
-//       selectedTime = time;
-//       updateServiceDetails();
-//     });
-//     timeSlotsEl.appendChild(slot);
-//   });
-// }
-
-// function updateServiceDetails() {
-//   if (!selectedDate || !selectedTime) return;
-
-//   availabilityLabel.textContent = `Availability for ${selectedDate.toLocaleDateString('en-UK', {
-//     weekday: 'long',
-//     day: 'numeric',
-//     month: 'long'
-//   })}`;
-
-//   serviceDetailsEl.innerHTML = `
-//     <p><strong>${serviceInfo.title}</strong></p>
-//     <p>${selectedDate.toLocaleDateString('en-UK', {
-//       day: 'numeric', month: 'long', year: 'numeric'
-//     })} at ${selectedTime}</p>
-//     <p>${serviceInfo.location}</p>
-//     <p>${serviceInfo.restaurant}</p>
-//     <p>${serviceInfo.duration}</p>
-//     <p>${serviceInfo.price}</p>
-//   `;
-// }

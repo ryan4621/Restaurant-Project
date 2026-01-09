@@ -13,18 +13,41 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['names'], $_POST['emai
     $email = htmlspecialchars(trim($_POST['email']));
     $phone = htmlspecialchars(trim($_POST['phone']));
     $reservation_title = htmlspecialchars(trim($_POST['reservation_title'] ?? ''));
-    $reservation_date = htmlspecialchars(trim($_POST['reservation_date'] ?? ''));
+    $reservation_date_raw = htmlspecialchars(trim($_POST['reservation_date'] ?? ''));
+    $reservation_date_raw = preg_replace('/\s+/', ' ', $reservation_date_raw);
     $raw_price = $_POST['reservation_price'] ?? '';
     $clean_price = trim(str_replace(['$', ','], '', $raw_price));
     $reservation_price = floatval($clean_price);
-    // error_log("Raw price received: " . $_POST['reservation_price']);
 
-    // Additional server-side validation
+    $reservation_date = '';
+    $date_obj = false;
+    
+    $formats = [
+        'Y-m-d H:i:s',
+        'Y-m-d H:i',
+        'F j, Y \a\t H:i',
+        'F j, Y H:i',
+        'd/m/Y H:i',
+        'm/d/Y H:i',
+    ];
+    
+    foreach ($formats as $format) {
+        $date_obj = DateTime::createFromFormat($format, $reservation_date_raw);
+        if ($date_obj !== false) {
+            $reservation_date = $date_obj->format('Y-m-d H:i:s');
+            break;
+        }
+    }
+    
+    if ($date_obj === false) {
+        exit("Invalid date format received: '$reservation_date_raw'. Please contact support.");
+    }
+
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         exit("Invalid email format.");
     }
 
-    if (!preg_match("/^[0-9]{10,15}$/", $phone)) {
+    if (!preg_match("/^\+?[0-9]{10,15}$/", $phone)) {
         exit("Invalid phone number. Use 10 to 15 digits only.");
     }
 
@@ -39,7 +62,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['names'], $_POST['emai
         die("Connection failed: " . $conn->connect_error);
     }
 
-    // Check if the exact date and time already exists
     $checkStmt = $conn->prepare("SELECT id FROM reservations WHERE reservation_date = ?");
     $checkStmt->bind_param("s", $reservation_date);
     $checkStmt->execute();
@@ -51,11 +73,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['names'], $_POST['emai
     }
     $checkStmt->close();
 
-
     $status = 'Pending';
     $stmt = $conn->prepare("INSERT INTO reservations (name, email, phone, reservation_title, reservation_date, reservation_price, status, token) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
     $stmt->bind_param("sssssdss", $name, $email, $phone, $reservation_title, $reservation_date, $reservation_price, $status, $token);
-    $stmt->execute();
+    
+    if (!$stmt->execute()) {
+        error_log("Database error: " . $stmt->error);
+        exit("Database error occurred. Please try again.");
+    }
+    
     $stmt->close();
     $conn->close();
 
@@ -70,19 +96,22 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['names'], $_POST['emai
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
         $mail->Port = 465;
 
-        $mail->setFrom('lucaslucass47151@gmail.com', 'support');
+        $mail->setFrom('lucaslucass47151@gmail.com', 'BOHO Restaurant');
         $mail->addAddress($email, $name);
 
         $mail->isHTML(true);
         $mail->Subject = 'Reservation Confirmation';
         $link = "http://localhost/niit-project/backend/manage_reservation.php?token=$token";
+        
+        $display_date = date('l, F j, Y \a\t g:i A', strtotime($reservation_date));
+        
         $mail->Body = "
             <h2>Reservation Confirmation</h2>
             <p>Hi <strong>$name</strong>,</p>
             <p>Thank you for your reservation. Here are your reservation details:</p>
             <ul>
-                <li><strong>Reservation Title:</strong> $reservation_title</li>
-                <li><strong>Date & Time:</strong> $reservation_date</li>
+                <li><strong>Reservation:</strong> $reservation_title</li>
+                <li><strong>Date & Time:</strong> $display_date</li>
                 <li><strong>Price:</strong> $" . number_format($reservation_price, 2) . "</li>
                 <li><strong>Phone:</strong> $phone</li>
                 <li><strong>Email:</strong> $email</li>
@@ -93,15 +122,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['names'], $_POST['emai
                 </a>
             </p>
             <p>We look forward to seeing you!</p>
-            <p>Regards,<br>Restaurant Team</p>
+            <p>Regards,<br>BOHO Restaurant Team</p>
         ";
 
-        $mail->SMTPDebug = 2;
-        $mail->Debugoutput = 'html';
-
+        $mail->SMTPDebug = 0;
+        
         $mail->send();
 
-        // Send notification to admin
         $adminMail = new PHPMailer(true);
         try {
             $adminMail->isSMTP();
@@ -112,7 +139,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['names'], $_POST['emai
             $adminMail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
             $adminMail->Port = 465;
 
-            $adminMail->setFrom('lucaslucass47151@gmail.com', 'Reservation');
+            $adminMail->setFrom('lucaslucass47151@gmail.com', 'BOHO Reservation System');
             $adminMail->addAddress('frenchman27595@gmail.com', 'Admin');
 
             $adminMail->isHTML(true);
@@ -122,11 +149,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['names'], $_POST['emai
                 <p><strong>Name:</strong> $name</p>
                 <p><strong>Email:</strong> $email</p>
                 <p><strong>Phone:</strong> $phone</p>
-                <p><strong>Reservation Title:</strong> $reservation_title</p>
-                <p><strong>Date:</strong> $reservation_date</p>
+                <p><strong>Reservation:</strong> $reservation_title</p>
+                <p><strong>Date & Time:</strong> $display_date</p>
                 <p><strong>Price:</strong> $" . number_format($reservation_price, 2) . "</p>
             ";
 
+            $adminMail->SMTPDebug = 0;
             $adminMail->send();
         } catch (Exception $e) {
             error_log("Admin email failed: {$adminMail->ErrorInfo}");
@@ -134,6 +162,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['names'], $_POST['emai
 
         echo 'Success!';
     } catch (Exception $e) {
+        error_log("Email error: {$mail->ErrorInfo}");
         echo "Email could not be sent. Mailer Error: {$mail->ErrorInfo}";
     }
 
