@@ -180,9 +180,6 @@ window.addEventListener('DOMContentLoaded', () => {
     function cleanDateString(dateStr) {
         return dateStr.replace(/\s+/g, ' ').trim();
     }
-
-    localStorage.setItem('selectedDate', cleanDateString(pickedDate));
-    
     
     document.querySelector('.service-btn').addEventListener('click', () => { 
         const pickedDate = secondP.textContent;
