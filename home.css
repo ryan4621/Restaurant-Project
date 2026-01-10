@@ -522,7 +522,7 @@ body.sidebar-open {
 
 .reservation h1 {
 	color: #fcedd4;
-	font-size: 2.8rem;
+	font-size: 2rem;
 	font-weight: 200;
 	margin-bottom: 60px;
 	font-family: "Cinzel", serif;
@@ -605,7 +605,7 @@ body.sidebar-open {
 
 @media (max-width: 992px) {
 	.reservation h1 {
-		font-size: 2.1rem;
+		font-size: 1.9rem;
 	}
 	.reserve-container {
 		grid-template-columns: repeat(2, 1fr);

@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Responsive Calendar</title>
+    <title>Cart Page</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="calendar.css">
     <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="cart.css">
     <link rel="stylesheet" href="cart-page.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -46,12 +46,65 @@
         </nav>
     </div>
 
+    <section class="cart-section">
+        <div class="cart-header">
+            <div class="cart-head">
+                <div class="cart-name">
+                    <p>CART</p>
+                    <p>(0 items)</p>
+                </div>
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="close-cart"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M6 18 18 6M6 6l12 12"
+                    />
+                </svg>
+            </div>
+            <div class="cart-header-border"></div>
+        </div>
+
+        <div class="empty-cart">
+            <span>Your cart is empty.</span>
+        </div>
+
+        <div class="cart-items"></div>
+
+        <div class="cart-total">
+            <div>
+                <span>Summary</span>
+            </div>
+            <div class="cart-total-item">
+                <span class="cart-total-title">Subtotal</span>
+                <span class="cart-total-price">$0</span>
+            </div>
+            <button class="btn-purchase" type="button">Go To Checkout</button>
+        </div>
+    </section>
+
     <header class="header2">
         <div class="navigate">
             <div class="nav">
                 <button class="hamburger-menu">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                        />
                     </svg>
                 </button>
 
@@ -71,30 +124,49 @@
                     </ul>
                 </nav>
 
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="cart-icon"
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="cart-icon"
                 >
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
                     />
                 </svg>
             </div>
         </div>
     </header>
 
-    <div class="carting">
-        <div class="cart-items">
-            
-        </div>
-        <div class="cart-total">
-            <div class="d-flex justify-content-between h-auto">
-                <span class="fs-5 fw-bold mb-4">Summary</span>
+    <section class="cart-page-carting">
+        <div class="cart-page-container">
+            <div class="cart-page-left">
+                <h2>My cart</h2>
+                <div class="cart-page-items-list"></div>
             </div>
-            <div class="cart-total-item">
-                <span class="cart-total-title">Subtotal</span>
-                <span class="cart-sub-total-price">$0</span>
+            <div class="cart-page-right">
+                <h3>Order summary</h3>
+                <div class="cart-page-order-summary">
+                    <div class="cart-page-summary-row">
+                        <span>Subtotal</span>
+                        <span class="cart-page-subtotal">$ 0</span>
+                    </div>
+                    <button class="cart-page-btn-checkout">Checkout</button>
+                    <p class="secure-checkout">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                        </svg>
+                        Secure Checkout
+                    </p>
+                </div>
             </div>
-            <button class="btn-purchase" type="button">Go To Checkout</button>
         </div>
-    </div>
+    </section>
 
     <footer class="footer">
         <div class="footer-container">
