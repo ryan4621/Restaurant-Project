@@ -48,8 +48,4 @@ I designed the UI first, then implemented frontend functionality using JavaScrip
 
 🍿 Preview
 --
-Screen recording showing menu browsing, reservation creation, and cart interaction.
-
-<img src="https://github.com/ryan4621/ryan4621/blob/main/Screenshot%202025-12-30%20at%2002.42.42.png?raw=true"
-             alt="Restaurant Project"
-             style="width:80%; height:400px; object-fit:cover;"/>
+![Boho Preview](https://raw.githubusercontent.com/ryan4621/ryan4621/main/Boho%20Restaurant%20Preview.gif)
