@@ -48,4 +48,4 @@ I designed the UI first, then implemented frontend functionality using JavaScrip
 
 🍿 Preview
 --
-![Boho Preview](https://raw.githubusercontent.com/ryan4621/ryan4621/main/Boho%20Restaurant%20Preview.gif)
+![Boho Preview](https://raw.githubusercontent.com/ryan4621/Restaurant-Project/main/Boho%20Restaurant%20Preview.gif)
